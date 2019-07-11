@@ -9,3 +9,4 @@ first part completed: development environment configuration and basic help tools
    6) Jacson tools and handling of Json data configuration 
    7) Validator configuration
    8) Spring Context configuration
+   9) Apache server 
