@@ -17,7 +17,14 @@ import javax.servlet.http.HttpServletResponse;
  **/
 @Slf4j
 public class SpringExceptionResolver implements HandlerExceptionResolver {
-
+    /**
+     * to handler the requesting errors
+     * @param httpServletRequest
+     * @param httpServletResponse
+     * @param o
+     * @param e
+     * @return
+     */
     public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
         String url = httpServletRequest.getRequestURI().toString();
         ModelAndView mv;

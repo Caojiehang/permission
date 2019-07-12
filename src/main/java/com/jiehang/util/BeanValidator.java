@@ -81,6 +81,11 @@ public class BeanValidator {
         }
     }
 
+    /**
+     * check  params exception
+     * @param object
+     * @throws ParamException
+     */
     public static void check(Object object) throws ParamException {
         Map<String,String> map = BeanValidator.validateObject(object);
         /**

@@ -51,9 +51,6 @@ public class TestController {
         log.info(JsonMapper.obj2String(model));
         BeanValidator.check(vo);
         return JsonData.success("test context");
-
-
-
     }
 
 }
