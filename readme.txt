@@ -10,3 +10,5 @@ first part completed: development environment configuration and basic help tools
    7) Validator configuration
    8) Spring Context configuration
    9) Apache server 
+Module development:
+Department module completed: function: tree list display, add, delete, edit, update department
