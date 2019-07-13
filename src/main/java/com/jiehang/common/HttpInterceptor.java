@@ -71,5 +71,10 @@ public class HttpInterceptor extends HandlerInterceptorAdapter {
         long end = System.currentTimeMillis();
         Map parameterMap = request.getParameterMap();
         log.info("request complete. url:{}, cost:{}",url,end-start);
+        removeThreadLocalInfo();
+    }
+
+    public void removeThreadLocalInfo(){
+        RequestHolder.remove();
     }
 }

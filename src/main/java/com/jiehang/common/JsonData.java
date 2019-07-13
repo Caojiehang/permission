@@ -1,6 +1,7 @@
 package com.jiehang.common;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +12,8 @@ import java.util.Map;
  * @Author jiehangcao
  * @Date 2019-07-08 23:59
  **/
-@Data
+@Getter
+@Setter
 public class JsonData {
     /**
      * return result

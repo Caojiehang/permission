@@ -12,3 +12,6 @@ first part completed: development environment configuration and basic help tools
    9) Apache server 
 Module development:
 Department module completed: function: tree list display, add, delete, edit, update department
+Basic UI template design and configutation
+User module completed: function: user list display(click department name) include paging display , add, edit, update user
+                       User Login Filter, RequestHolder function(obtain current user info and request sessions)

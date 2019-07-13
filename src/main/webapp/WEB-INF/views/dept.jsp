@@ -10,6 +10,7 @@
 <head>
     <title>Department management</title>
     <jsp:include page="/common/backend_common.jsp"/>
+    <jsp:include page="/common/page.jsp"/>
 </head>
 <body class="no-skin" youdao="bind" style="background: white">
 <input id="gritter-light" checked="" type="checkbox" class="ace ace-switch ace-switch-5"/>
@@ -54,12 +55,7 @@
                                     <option value="100">100</option>
                                 </select> records </label>
                             </div>
-<%--                            <div class ="col-xs-6">--%>
-<%--                                <div id ="dynamic-table_filter" class="dataTables_filter"><label></label>--%>
-<%--                                    Search:--%>
-<%--                                    <input type="search" class="form-control input-sm" placeholder=" ">--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
+                     </div>
                     </div>
                     <table id="dynamic-table" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid"
                            aria-describedby="dynamic-table_info" style="font-size:14px">
@@ -92,7 +88,7 @@
         </div>
     </div>
 </div>
-<div id="dialog-dept-form" style="display: none;">
+<div id="dialog-dept-form" style="display: none;" >
     <form id="deptForm">
         <table class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
             <tr>
@@ -108,7 +104,7 @@
             </tr>
             <tr>
                 <td><label for="deptSeq">sequence</label></td>
-                <td><input type="text" name="seq" id="deptSeq" value="1" class="text ui-widget-content ui-corner-all"></td>
+                <td><input type="text" name="seq" id="deptSeq" value="1" class="text ui-widget-content ui-corner-all "></td>
             </tr>
             <tr>
                 <td><label for="deptRemark">comment</label></td>
@@ -176,15 +172,38 @@
     {{/deptList}}
 </ol>
 </script>
+<script id="userListTemplate" type="x-tmpl-mustache">
+{{#userList}}
+<tr role="row" class="user-name odd" data-id="{{id}}"><!--even -->
+    <td><a href="#" class="user-edit" data-id="{{id}}">{{username}}</a></td>
+    <td>{{showDeptName}}</td>
+    <td>{{mail}}</td>
+    <td>{{telephone}}</td>
+    <td>{{#bold}}{{showStatus}}{{/bold}}</td> <!-- 此处套用函数对status做特殊处理 -->
+    <td>
+        <div class="hidden-sm hidden-xs action-buttons">
+            <a class="green user-edit" href="#" data-id="{{id}}">
+                <i class="ace-icon fa fa-pencil bigger-100"></i>
+            </a>
+            <a class="red user-acl" href="#" data-id="{{id}}">
+                <i class="ace-icon fa fa-flag bigger-100"></i>
+            </a>
+        </div>
+    </td>
+</tr>
+{{/userList}}
+</script>
 <script type="application/javascript">
     $(function () {
         var deptList; // store dept tree list
         var deptMap = {};// store department info
-
+        var userMap = {};//store user info
         var optionStr = "";
         var lastClickDeptId = -1;
         var deptListTemplate = $('#deptListTemplate').html();
         Mustache.parse(deptListTemplate);
+        var userListTemplate = $('#userListTemplate').html();
+        Mustache.parse(userListTemplate);
         loadDeptTree();
         function loadDeptTree() {
             $.ajax({
@@ -196,7 +215,6 @@
                         $("#deptList").html(rendered);
                         recursiveRenderDept(result.data);
                         bindDeptClick();
-                        
                     } else {
                         showMessage("loading department list",result.msg,false);
                     }
@@ -240,26 +258,27 @@
 
             $(".dept-edit").click(function (e) {
                 e.preventDefault();
-                e.stopPropagation();
-                var deptId = $(this).attr("data-id");
-               // handleDeptSelected(deptId);
-                $("#dialog-dept-form").dialog({
-                    modal: true,
-                    title: "edit department",
-                    open: function (event,ui) {
-                        $(".ui-dialog-titlebar-close", $(this).parent()).hide();
-                        optionStr = "<option value=\"0\">-</option>";
-                        recursiveRenderDeptSelect(deptList,1);
-                        $("#deptForm")[0].reset();
-                    $("#parentId").html(optionStr);
-                    $("#deptId").val(deptId);
-                    var targetDept = deptMap[deptId];
-                    if(targetDept) {
-                        $("#parentId").val(targetDept.parentId);
-                        $("#deptName").val(targetDept.name);
-                        $("#deptSeq").val(targetDept.seq);
-                        $("#deptRemark").val(targetDept.remark);
-                    }
+                        e.stopPropagation();
+
+                        var deptId = $(this).attr("data-id");
+                        // handleDeptSelected(deptId);
+                        $("#dialog-dept-form").dialog({
+                            modal: true,
+                            title: "edit department",
+                            open: function (event,ui) {
+                                $(".ui-dialog-titlebar-close", $(this).parent()).hide();
+                                optionStr = "<option value=\"0\">-</option>";
+                                recursiveRenderDeptSelect(deptList,1);
+                                $("#deptForm")[0].reset();
+                                $("#parentId").html(optionStr);
+                                $("#deptId").val(deptId);
+                                var targetDept = deptMap[deptId];
+                                if(targetDept) {
+                                    $("#parentId").val(targetDept.parentId);
+                                    $("#deptName").val(targetDept.name);
+                                    $("#deptSeq").val(targetDept.seq);
+                                    $("#deptRemark").val(targetDept.remark);
+                                }
                     },
                     buttons : {
                         "update" : function(e) {
@@ -295,10 +314,131 @@
         }
 
         function loadUserList(deptId) {
-            //Todo:
-            console.log("load user list, deptId:" + deptId);
+            var pageSize = $("#pageSize").val();
+            var url = "/sys/users/page.json?deptId=" + deptId;
+            var pageNo = $("#userPage .pageNo").val() || 1;
+            $.ajax({
+                url : url,
+                data: {
+                    pageSize: pageSize,
+                    pageNo: pageNo
+                },
+                success: function (result) {
+                    renderUserListAndPage(result, url);
+                }
+            })
         }
 
+        function renderUserListAndPage(result, url) {
+            if (result.ret) {
+                if (result.data.total > 0){
+                    var rendered = Mustache.render(userListTemplate, {
+                        userList: result.data.data,
+                        "showDeptName": function() {
+                            return deptMap[this.deptId].name;
+                        },
+                        "showStatus": function() {
+                            return this.status == 1 ? 'valid' : (this.status == 0 ? 'invalid' : 'deleted');
+                        },
+                        "bold": function() {
+                            return function(text, render) {
+                                var status = render(text);
+                                if (status == 'valid') {
+                                    return "<span class='label label-sm label-success'>valid</span>";
+                                } else if(status == 'invalid') {
+                                    return "<span class='label label-sm label-warning'>invalid</span>";
+                                } else {
+                                    return "<span class='label'>deleted</span>";
+                                }
+                            }
+                        }
+                    });
+                    $("#userList").html(rendered);
+                    bindUserClick();
+                    $.each(result.data.data, function(i, user) {
+                        userMap[user.id] = user;
+                    })
+                } else {
+                    $("#userList").html('');
+                }
+                var pageSize = $("#pageSize").val();
+                var pageNo = $("#userPage .pageNo").val() || 1;
+                renderPage(url, result.data.total, pageNo, pageSize, result.data.total > 0 ? result.data.data.length : 0, "userPage", renderUserListAndPage);
+            } else {
+                showMessage("Obtain user list", result.msg, false);
+            }
+        }
+        $(".user-add").click(function () {
+            $("#dialog-user-form").dialog({
+                modal: true,
+                title: "add new user",
+                open: function (event,ui) {
+                    $(".ui-dialog-titlebar-close", $(this).parent()).hide();
+                    optionStr = "";
+                    recursiveRenderDeptSelect(deptList,1);
+                    $("#userForm")[0].reset();
+                    $("#deptSelectId").html(optionStr);
+                },
+                buttons : {
+                    "add" : function(e) {
+                        e.preventDefault();
+                        updateUser(true,function (data) {
+                            $("#dialog-user-form").dialog("close");
+                            loadUserList(lastClickDeptId);
+                        }, function (data) {
+                            showMessage("add new user",data.msg,false);
+                        })
+                    },
+                    "cancel": function () {
+                        $("#dialog-user-form").dialog("close");
+                    }
+                }
+            });
+        });
+        function bindUserClick() {
+            $(".user-edit").click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var userId = $(this).attr("data-id");
+                // handleDeptSelected(deptId);
+                $("#dialog-user-form").dialog({
+                    modal: true,
+                    title: "edit user",
+                    open: function (event, ui) {
+                        $(".ui-dialog-titlebar-close", $(this).parent()).hide();
+                        optionStr = "";
+                        recursiveRenderDeptSelect(deptList, 1);
+                        $("#userForm")[0].reset();
+                        $("#deptSelectId").html(optionStr);
+                        var targetUser = userMap[userId];
+                        if (targetUser) {
+                            $("#deptSelectId").val(targetUser.deptId);
+                            $("#userName").val(targetUser.username);
+                            $("#userMail").val(targetUser.mail);
+                            $("#userTelephone").val(targetUser.telephone);
+                            $("#userStatus").val(targetUser.status);
+                            $("#userRemark").val(targetUser.remark);
+                            $("#userId").val(targetUser.id);
+                        }
+                    },
+                    buttons: {
+                        "update": function (e) {
+                            e.preventDefault();
+                            updateUser(false, function (data) {
+                                $("#dialog-user-form").dialog("close");
+                                loadUserList(lastClickDeptId);
+                            }, function (data) {
+                                showMessage("update user", data.msg, false);
+                            })
+                        },
+                        "cancel": function () {
+                            $("#dialog-user-form").dialog("close");
+                        }
+                    }
+                })
+            })
+        }
         $(".dept-add").click(function () {
             $("#dialog-dept-form").dialog({
                 modal: true,
@@ -350,6 +490,26 @@
             $.ajax({
                 url: isCreate ? "/sys/dept/save.json" : "/sys/dept/update.json",
                 data: $("#deptForm").serializeArray(),
+                type: 'POST',
+                success: function (result) {
+                    if(result.ret) {
+                        loadDeptTree();
+                        if(successCallBack) {
+                            successCallBack(result);
+                        }
+                    } else {
+                        if(failCallBack) {
+                            failCallBack(result);
+                        }
+                    }
+                }
+            })
+
+        }
+        function updateUser(isCreate, successCallBack, failCallBack) {
+            $.ajax({
+                url: isCreate ? "/sys/users/save.json" : "/sys/users/update.json",
+                data: $("#userForm").serializeArray(),
                 type: 'POST',
                 success: function (result) {
                     if(result.ret) {

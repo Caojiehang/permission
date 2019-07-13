@@ -1,11 +1,13 @@
 package com.jiehang.service;
 
 import com.google.common.base.Preconditions;
+import com.jiehang.common.RequestHolder;
 import com.jiehang.dao.SysDeptMapper;
 import com.jiehang.exception.ParamException;
 import com.jiehang.model.SysDept;
 import com.jiehang.param.DeptParam;
 import com.jiehang.util.BeanValidator;
+import com.jiehang.util.IpUtil;
 import com.jiehang.util.LevelUtil;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.stereotype.Service;
@@ -42,8 +44,8 @@ public class SysDeptService {
          * set level
          */
         dept.setLevel(LevelUtil.calculateLevel(getLevel(param.getParentId()),param.getParentId()));
-        dept.setOperator("system"); //TODO:
-        dept.setOperateIp("127.0.0.1");//TODO:
+        dept.setOperator(RequestHolder.getCurrentHolder().getUsername());
+        dept.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
         dept.setOperateTime(new Date());
         /**
          * insert selective: only handle input value columns without others.
@@ -73,8 +75,8 @@ public class SysDeptService {
                 .seq(param.getSeq())
                 .remark(param.getRemark()).build();
         after.setLevel(LevelUtil.calculateLevel(getLevel(param.getParentId()),param.getParentId()));
-        after.setOperator("system-update"); //TODO:
-        after.setOperateIp("127.0.0.1");//TODO:
+        after.setOperator(RequestHolder.getCurrentHolder().getUsername());
+        after.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));//TODO:
         after.setOperateTime(new Date());
         updateWithChild(before,after);
     }
