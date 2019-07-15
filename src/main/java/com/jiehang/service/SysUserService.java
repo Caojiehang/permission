@@ -42,7 +42,6 @@ public class SysUserService {
             throw new ParamException("the email has been existed");
         }
         String password = PasswordUtil.randomPassword();
-        password = "12345678";
         /**
          * password encrypted by MD5
          */
@@ -59,11 +58,11 @@ public class SysUserService {
         sysUser.setOperateTime(new Date());
         sysUserMapper.insertSelective(sysUser);
         //todo: send email to user but will increase the response time for adding operation
-        Mail mail = new Mail();
-        mail.setSubject("Login password");
-        mail.setReceivers(Collections.singleton(sysUser.getMail()));
-        mail.setMessage(password);
-        MailUtil.send(mail);
+//        Mail mail = new Mail();
+//        mail.setSubject("Login password");
+//        mail.setReceivers(Collections.singleton(sysUser.getMail()));
+//        mail.setMessage(password);
+//        MailUtil.send(mail);
     }
 
     /**

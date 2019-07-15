@@ -3,10 +3,14 @@ package com.jiehang.service;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
+import com.jiehang.dao.SysAclModuleMapper;
 import com.jiehang.dao.SysDeptMapper;
+import com.jiehang.dto.AclModuleLevelDto;
 import com.jiehang.dto.DeptLevelDto;
+import com.jiehang.model.SysAclModule;
 import com.jiehang.model.SysDept;
 import com.jiehang.util.LevelUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.stereotype.Service;
 
@@ -22,9 +26,76 @@ import java.util.List;
  * @Date 2019-07-11 17:03
  **/
 @Service
+@Slf4j
 public class SysTreeService {
     @Resource
     private SysDeptMapper sysDeptMapper;
+
+    @Resource
+    private SysAclModuleMapper sysAclModuleMapper;
+
+    /**
+     * Build permission module tree display
+     * @return
+     */
+    public List<AclModuleLevelDto> aclModuleTree() {
+        List<SysAclModule> sysAclModuleList = sysAclModuleMapper.getAllAclModule();
+        List<AclModuleLevelDto> dtoList = Lists.newArrayList();
+        for(SysAclModule sysAclModule: sysAclModuleList) {
+            dtoList.add(AclModuleLevelDto.adapt(sysAclModule));
+        }
+        return aclModuleListToTree(dtoList);
+    }
+
+    /**
+     * Permission module tree building logic
+     * @param aclModuleLevelDtoList
+     * @return
+     */
+    public List<AclModuleLevelDto> aclModuleListToTree(List<AclModuleLevelDto> aclModuleLevelDtoList) {
+        if(CollectionUtils.isEmpty(aclModuleLevelDtoList)) {
+            return Lists.newArrayList();
+        }
+        // level - > { dept1,dept2, dept3}  to handle Map<String,List<Object>>
+        Multimap<String, AclModuleLevelDto> levelAclModuleMap = ArrayListMultimap.create();
+        List<AclModuleLevelDto> rootList = Lists.newArrayList();
+
+        for (AclModuleLevelDto dto : aclModuleLevelDtoList) {
+            levelAclModuleMap.put(dto.getLevel(), dto);
+            if (LevelUtil.ROOT.equals(dto.getLevel())) {
+                rootList.add(dto);
+            }
+        }
+        //sort by descending
+        Collections.sort(rootList,aclModuleSeqComparator);
+        //recursion to build tree
+        transformAclModuleTree(rootList,LevelUtil.ROOT,levelAclModuleMap);
+
+        return rootList;
+
+    }
+
+    /**
+     * recursion to handle each level module
+     * from root level
+     * @param dtoList
+     * @param level
+     * @param levelAclModuleMap
+     */
+    public void transformAclModuleTree(List<AclModuleLevelDto> dtoList,String level,Multimap<String,AclModuleLevelDto> levelAclModuleMap) {
+        for(int i = 0; i< dtoList.size();i++) {
+            AclModuleLevelDto dto = dtoList.get(i);
+
+            String nextLevel = LevelUtil.calculateLevel(level,dto.getId());
+
+            List<AclModuleLevelDto> tempList = (List<AclModuleLevelDto>) levelAclModuleMap.get(nextLevel);
+            if(CollectionUtils.isNotEmpty(tempList)) {
+                Collections.sort(tempList,aclModuleSeqComparator);
+                dto.setAclModuleList(tempList);
+                transformAclModuleTree(tempList,nextLevel,levelAclModuleMap);
+            }
+        }
+    }
 
     /**
      * Build tree data
@@ -62,13 +133,9 @@ public class SysTreeService {
             }
         }
         //sort by descending
-        Collections.sort(rootList, new Comparator<DeptLevelDto>() {
-            public int compare(DeptLevelDto o1, DeptLevelDto o2) {
-                return o1.getSeq() - o2.getSeq();
-            }
-        });
+        Collections.sort(rootList,deptSeqComparator);
         //recursion to build tree
-        transformDeptTree(rootList, LevelUtil.ROOT, levelDeptMap);
+        transformDeptTree(rootList,LevelUtil.ROOT,levelDeptMap);
         return rootList;
     }
 
@@ -77,6 +144,13 @@ public class SysTreeService {
      */
     public Comparator<DeptLevelDto> deptSeqComparator = new Comparator<DeptLevelDto>() {
         public int compare(DeptLevelDto o1, DeptLevelDto o2) {
+            return o1.getSeq() - o2.getSeq();
+        }
+    };
+
+
+    public Comparator<AclModuleLevelDto> aclModuleSeqComparator = new Comparator<AclModuleLevelDto>() {
+        public int compare(AclModuleLevelDto o1, AclModuleLevelDto o2) {
             return o1.getSeq() - o2.getSeq();
         }
     };

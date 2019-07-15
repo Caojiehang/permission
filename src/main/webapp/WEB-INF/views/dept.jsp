@@ -56,6 +56,12 @@
                                 </select> records </label>
                             </div>
                      </div>
+                        <div class="col-xs-6">
+                            <div id = "dynamic-table_filter" class="dataTables_filter"><lable>
+                                Search: </lable>
+                                <input type="search" class="form-control input-sm" placeholder="username">
+                            </div>
+                        </div>
                     </div>
                     <table id="dynamic-table" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid"
                            aria-describedby="dynamic-table_info" style="font-size:14px">

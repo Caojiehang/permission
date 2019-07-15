@@ -68,16 +68,14 @@
         }
     </script>
 
-    <div id="sidebar" class="sidebar responsive" style="width: 220px">
+    <div id="sidebar" class="sidebar responsive">
         <script type="text/javascript">
             try {
                 ace.settings.check('sidebar', 'fixed')
             } catch (e) {
             }
         </script>
-
-
-        <ul class="nav nav-list" style="width: 220px;height: fit-content">
+        <ul class="nav nav-list">
             <li class="active">
                 <a class="popstyle" href="/sys/user/page.do" target="_blank">
                     <i class="menu-icon fa fa-tachometer"></i>
@@ -86,9 +84,9 @@
                 <b class="arrow"></b>
             </li>
             <li class="">
-                <a href="#" class="dropdown-toggle">
+                <a href="#" class="dropdown-toggle" >
                     <i class="menu-icon fa fa-desktop"></i>
-                    <span class="menu-text"> Permission management  </span>
+                    <span class="menu-text"> Permission management </span>
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
 
@@ -129,7 +127,7 @@
             <li class="">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-desktop"></i>
-                    <span class="menu-text"> System management  </span>
+                    <span class="menu-text"> System management </span>
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
 
@@ -152,7 +150,6 @@
             <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left"
                data-icon2="ace-icon fa fa-angle-double-right"></i>
         </div>
-
         <script type="text/javascript">
             try {
                 ace.settings.check('sidebar', 'collapsed')
@@ -161,7 +158,7 @@
         </script>
     </div>
     <div class="main-content">
-        <iframe id="innerFrame" src="/sys/dept/dept.page" width="90%" style="min-height: 768px;"></iframe>
+        <iframe id="innerFrame" src="/sys/dept/dept.page" width="99%" style="min-height: 768px;"></iframe>
     </div>
     <!-- /.main-content -->
 
