@@ -2,7 +2,6 @@ package com.jiehang.filter;
 
 import com.jiehang.common.RequestHolder;
 import com.jiehang.model.SysUser;
-import com.sun.deploy.net.HttpResponse;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.*;

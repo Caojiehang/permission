@@ -85,9 +85,7 @@ public class SysTreeService {
     public void transformAclModuleTree(List<AclModuleLevelDto> dtoList,String level,Multimap<String,AclModuleLevelDto> levelAclModuleMap) {
         for(int i = 0; i< dtoList.size();i++) {
             AclModuleLevelDto dto = dtoList.get(i);
-
             String nextLevel = LevelUtil.calculateLevel(level,dto.getId());
-
             List<AclModuleLevelDto> tempList = (List<AclModuleLevelDto>) levelAclModuleMap.get(nextLevel);
             if(CollectionUtils.isNotEmpty(tempList)) {
                 Collections.sort(tempList,aclModuleSeqComparator);

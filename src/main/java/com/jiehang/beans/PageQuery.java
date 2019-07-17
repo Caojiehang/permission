@@ -23,6 +23,7 @@ public class PageQuery {
     @Setter
     @Min(value = 1,message = "invalid display number")
     private int pageSize = 10;
+    
     @Setter
     private int offset;
 

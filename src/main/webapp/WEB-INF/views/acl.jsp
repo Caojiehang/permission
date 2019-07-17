@@ -433,7 +433,153 @@
             loadAclList(aclModuleId);
         }
         function loadAclList(aclModuleId) {
+            var pageSize = $("#pageSize").val();
+            var url = "/sys/acl/page.json?aclModuleId=" + aclModuleId;
+            var pageNo = $("#aclPage .pageNo").val() || 1;
+            $.ajax({
+                url : url,
+                data: {
+                    pageSize: pageSize,
+                    pageNo: pageNo
+                },
+                success: function (result) {
+                    renderAclListAndPage(result, url);
+                }
+            })
          console.log("load acl list , id:" +aclModuleId)
+        }
+        function renderAclListAndPage(result,url) {
+            if(result.ret) {
+                if (result.data.total > 0){
+                    var rendered = Mustache.render(aclListTemplate, {
+                            aclList: result.data.data,
+                            "showAclModuleName": function () {
+                                return aclModuleMap[this.aclModuleId].name;
+                            },
+                            "showStatus": function () {
+                                return this.status == 1 ? 'valid' : 'invalid';
+                            },
+                            "showType":function () {
+                                return this.type == 1 ? 'menu' : (this.type == 2 ? 'button' : 'others');
+                            },
+                            "bold": function () {
+                                return function (text,render) {
+                                    var status = render(text);
+                                    if (status == 'valid') {
+                                        return "<span class='label label-sm label-success'>valid</span>";
+                                    } else if(status == 'invalid') {
+                                        return "<span class='label label-sm label-warning'>invalid</span>";
+                                    } else {
+                                        return "<span class='label'>deleted</span>";
+                                    }
+                                }
+                            }
+                        }
+                       );
+                    $("#aclList").html(rendered);
+                    bindAclClick();
+                    $.each(result.data.data, function(i, acl) {
+                        aclMap[acl.id] = acl;
+                    })
+
+            } else {
+                    $("#aclList").html("");
+                }
+                var pageSize = $("#pageSize").val();
+                var pageNo = $("#userPage .pageNo").val() || 1;
+                renderPage(url, result.data.total, pageNo, pageSize, result.data.total > 0 ? result.data.data.length : 0, "aclPage", renderAclListAndPage);
+            }
+            else {
+                showMessage("Obtain permission list", result.msg, false);
+            }
+        }
+        function bindAclClick() {
+            $(".acl-edit").click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var aclId = $(this).attr("data-id");
+                $("#dialog-acl-form").dialog({
+                    modal: true,
+                    title: "edit permission",
+                    open: function (event,ui) {
+                        $(".ui-dialog-titlebar-close", $(this).parent()).hide();
+                        optionStr = "";
+                        recursiveRenderAclModuleSelect(aclModuleList,1);
+                        $("#aclForm")[0].reset();
+                        $("#aclModuleSelectId").html(optionStr);
+                        var targetAcl = aclMap[aclId];
+                        if (targetAcl) {
+                            $("#aclId").val(aclId);
+                            $("#aclModuleSelectId").val(targetAcl.aclModuleId);
+                            $("#aclStatus").val(targetAcl.status);
+                            $("#aclType").val(targetAcl.type);
+                            $("#aclName").val(targetAcl.name);
+                            $("#aclUrl").val(targetAcl.url);
+                            $("#aclSeq").val(targetAcl.seq);
+                            $("#aclRemark").val(targetAcl.remark);
+                        }
+                    },
+                    buttons : {
+                        "update" : function(e) {
+                            e.preventDefault();
+                            updateAcl(false,function (data) {
+                                $("#dialog-acl-form").dialog("close");
+                            }, function (data) {
+                                showMessage("edit permission",data.msg,false);
+                            })
+                        },
+                        "cancel": function () {
+                            $("#dialog-acl-form").dialog("close");
+                        }
+                    }
+                });
+            });
+        }
+        $(".acl-add").click(function () {
+            $("#dialog-acl-form").dialog({
+                modal: true,
+                title: "add new permission",
+                open: function (event,ui) {
+                    $(".ui-dialog-titlebar-close", $(this).parent()).hide();
+                    optionStr = "";
+                    recursiveRenderAclModuleSelect(aclModuleList,1);
+                    $("#aclForm")[0].reset();
+                    $("#aclModuleSelectId").html(optionStr);
+                },
+                buttons : {
+                    "add" : function(e) {
+                        e.preventDefault();
+                        updateAcl(true,function (data) {
+                            $("#dialog-acl-form").dialog("close");
+                        }, function (data) {
+                            showMessage("add new permission",data.msg,false);
+                        })
+                    },
+                    "cancel": function () {
+                        $("#dialog-acl-form").dialog("close");
+                    }
+                }
+            });
+        });
+        function updateAcl(isCreate, successCallBack, failCallBack) {
+            $.ajax({
+                url: isCreate ? "/sys/acl/save.json" : "/sys/acl/update.json",
+                data: $("#aclForm").serializeArray(),
+                type: 'POST',
+                success: function (result) {
+                    if(result.ret) {
+                        loadAclList(lastClickAclModuleId);
+                        if(successCallBack) {
+                            successCallBack(result);
+                        }
+                    } else {
+                        if(failCallBack) {
+                            failCallBack(result);
+                        }
+                    }
+                }
+            })
+
         }
     })
 </script>

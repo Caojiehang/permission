@@ -1,7 +1,4 @@
 package com.jiehang.util;
-
-import com.jiehang.model.SysUser;
-
 import java.util.Date;
 import java.util.Random;
 
