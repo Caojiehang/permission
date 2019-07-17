@@ -16,3 +16,4 @@ Basic UI template design and configutation
 User module completed: function: user list display(click department name) include paging display , add, edit, update user
                        User Login Filter, RequestHolder function(obtain current user info and request sessions)
 Permission module completed: tree structure display, edit, add, update functions
+Permission point module completed: permission list display, add, edit, update permission point
