@@ -17,3 +17,10 @@ User module completed: function: user list display(click department name) includ
                        User Login Filter, RequestHolder function(obtain current user info and request sessions)
 Permission module completed: tree structure display, edit, add, update functions
 Permission point module completed: permission list display, add, edit, update permission point
+Role module completed: including role management(edit,add,delete) mantain user and role, role and permissions, permissions allocated(Ztree usage), roles allocated
+Get user permission data(it can be view on console but without visulization)
+Get related role data and user list under certain permission (it can be view on console but without visulization)
+Permission interception basic logic implement: 
+                      1. Super admin can access all resources (Admin)
+                      2. Permission filter: get current login user and allocated permissions, judge whether he has permission to access related resources, if not, jump to no authorited page
+                      3. Once user has one permission under one permission module, he is allocated to access the resources

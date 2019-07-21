@@ -24,7 +24,7 @@ public class AclModuleParam {
      * module name
      */
     @NotBlank(message = "permission module name can not be empty")
-    @Length(min = 2,max = 64,message = "the length should be between 2 and 64")
+    @Length(min = 2,max = 200,message = "the length should be between 2 and 200")
     private String name;
     /**
      * up-level id

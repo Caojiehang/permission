@@ -41,8 +41,7 @@ public class UserController {
             errorMsg = "password can not be empty";
         }else if(user == null) {
             errorMsg = "user is not existed";
-        }
-        else if(!user.getPassword().equals(MD5Util.encrypt(password))) {
+        } else if(!user.getPassword().equals(MD5Util.encrypt(password))) {
             errorMsg = "username or password error";
         } else if(user.getStatus() != 1) {
             errorMsg = "user has been frozen, please contact with admin";
@@ -53,6 +52,7 @@ public class UserController {
             } else {
                 response.sendRedirect("/admin/index.page");//todo
             }
+            return;
         }
         request.setAttribute("error",errorMsg);
         request.setAttribute("username",username);

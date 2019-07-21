@@ -243,25 +243,34 @@
         }
         //Bind the department click event
         function bindDeptClick() {
-            $(".dept-delete").click(function (e) {
-                //
-                e.preventDefault();
-                e.stopPropagation();
-                var deptId = $(this).attr("data-id");
-                var deptName = $(this).attr("data-name");
-                if(confirm("confirm deleting dept ["+ deptName +"]?")) {
-                    //todo:
-                    console.log("delete dept: "+ deptName);
-                }
-            });
-
             $(".dept-name").click(function (e) {
                 e.preventDefault();
                 e.stopPropagation();
                 var deptId = $(this).attr("data-id");
                 handleDeptSelected(deptId);
             });
-
+            $(".dept-delete").click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var deptId = $(this).attr("data-id");
+                var deptName = $(this).attr("data-name");
+                if (confirm("Confirm to delete[" + deptName + "]?")) {
+                    $.ajax({
+                        url: "/sys/dept/delete.json",
+                        data: {
+                            id: deptId
+                        },
+                        success: function (result) {
+                            if (result.ret) {
+                                showMessage("Delete [" + deptName + "]", "Successfully", true);
+                                loadDeptTree();
+                            } else {
+                                showMessage("Delete[" + deptName + "]", result.msg, false);
+                            }
+                        }
+                    });
+                }
+            });
             $(".dept-edit").click(function (e) {
                 e.preventDefault();
                         e.stopPropagation();
@@ -402,10 +411,28 @@
             });
         });
         function bindUserClick() {
+            $(".user-acl").click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var userId = $(this).attr("data-id");
+                $.ajax({
+                    url: "/sys/users/acls.json",
+                    data: {
+                        userId: userId
+                    },
+                    type: 'POST',
+                    success: function (result) {
+                        if(result.ret) {
+                            console.log(result);
+                        } else {
+                            showMessage("Obtain user permission data",result.msg,false);
+                        }
+                    }
+                })
+            });
             $(".user-edit").click(function (e) {
                 e.preventDefault();
                 e.stopPropagation();
-
                 var userId = $(this).attr("data-id");
                 // handleDeptSelected(deptId);
                 $("#dialog-user-form").dialog({

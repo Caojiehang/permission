@@ -4,10 +4,9 @@
 <head>
     <jsp:include page="/common/backend_common.jsp"/>
 </head>
-
 <body class="no-skin">
 <div id="navbar" class="navbar navbar-default">
-    <div class="navbar-container">
+    <div class="navbar-container ace-save-state">
         <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
             <span class="sr-only">Toggle sidebar</span>
             <span class="icon-bar"></span>
@@ -27,28 +26,35 @@
             <ul class="nav ace-nav">
                 <li class="light-blue dropdown-modal">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        <span class="user-info">
-                            <small>Welcome,</small>
-                            Admin
-                        </span>
+								<span class="user-info">
+									<small>Welcome,</small>
+									Admin
+								</span>
+
                         <i class="ace-icon fa fa-caret-down"></i>
                     </a>
+
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="#"> <i class="ace-icon fa fa-cog"></i>
-                                setting
+                            <a href="#">
+                                <i class="ace-icon fa fa-cog"></i>
+                                Settings
                             </a>
                         </li>
+
                         <li>
-                            <a href="profile.html"> <i class="ace-icon fa fa-user"></i>
-                                personal info
+                            <a href="profile.html">
+                                <i class="ace-icon fa fa-user"></i>
+                                Profile
                             </a>
                         </li>
 
                         <li class="divider"></li>
+
                         <li>
-                            <a href="/logout.page"> <i class="ace-icon fa fa-power-off"></i>
-                                log out
+                            <a href="#">
+                                <i class="ace-icon fa fa-power-off"></i>
+                                Logout
                             </a>
                         </li>
                     </ul>
@@ -86,7 +92,7 @@
             <li class="">
                 <a href="#" class="dropdown-toggle" >
                     <i class="menu-icon fa fa-desktop"></i>
-                    <span class="menu-text"> Permission management </span>
+                    <span class="menu-text">System </span>
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
 
@@ -127,7 +133,7 @@
             <li class="">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-desktop"></i>
-                    <span class="menu-text"> System management </span>
+                    <span class="menu-text"> System Setting </span>
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
 
@@ -161,7 +167,6 @@
         <iframe id="innerFrame" src="/sys/dept/dept.page" width="99%" style="min-height: 768px;"></iframe>
     </div>
     <!-- /.main-content -->
-
     <a href="index.html#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse display">
         <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
     </a>
@@ -180,12 +185,10 @@
 <!--[if IE]>
 <script src="/assets/js/jquery-1.11.0.min.js"></script>
 <![endif]-->
-
 <!--[if !IE]> -->
 <script type="text/javascript">
     window.jQuery || document.write("<script src='/assets/js/jquery.min.js'>" + "<" + "/script>");
 </script>
-
 <!-- <![endif]-->
 
 <!--[if IE]>
@@ -214,7 +217,6 @@
 <script src="/assets/js/ace.min.js"></script>
 
 <script>
-
     $(document).ready(function () {
         $(".popstyle").removeAttr("target");
         $(".popstyle").each(function () {
@@ -231,7 +233,6 @@
                     $this.attr("data")
             );
         });
-
         $(".direct").click(function () {
             var $this = $(this)
             $("iframe").attr(
@@ -239,6 +240,7 @@
                     $this.attr("data-value")
             );
         });
+
     });
 </script>
 </body>

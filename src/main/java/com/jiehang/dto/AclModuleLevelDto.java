@@ -18,6 +18,9 @@ public class AclModuleLevelDto extends SysAclModule {
 
     private List<AclModuleLevelDto> aclModuleList = Lists.newArrayList();
 
+
+    private List<AclDto> aclList = Lists.newArrayList();
+
     /**
      * copy dept to dept dto
      * @param sysAclModule

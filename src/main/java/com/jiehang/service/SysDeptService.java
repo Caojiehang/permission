@@ -3,6 +3,7 @@ package com.jiehang.service;
 import com.google.common.base.Preconditions;
 import com.jiehang.common.RequestHolder;
 import com.jiehang.dao.SysDeptMapper;
+import com.jiehang.dao.SysUserMapper;
 import com.jiehang.exception.ParamException;
 import com.jiehang.model.SysDept;
 import com.jiehang.param.DeptParam;
@@ -26,6 +27,9 @@ import java.util.List;
 public class SysDeptService {
     @Resource
     private SysDeptMapper sysDeptMapper;
+
+    @Resource
+    private SysUserMapper sysUserMapper;
     /**
      * save operation
      * @param param
@@ -129,6 +133,24 @@ public class SysDeptService {
             return null;
         }
         return dept.getLevel();
+    }
+
+    /**
+     * delete dept
+     * 1. judge whether has sub dept
+     * 2. judge whether has users
+     * @param deptId
+     */
+    public void delete(int deptId) {
+        SysDept sysDept = sysDeptMapper.selectByPrimaryKey(deptId);
+        Preconditions.checkNotNull(sysDept,"Department is not existed");
+        if(sysDeptMapper.countByParentId(sysDept.getId()) > 0) {
+            throw new ParamException("Sub department is existed, delete failed");
+        }
+        if(sysUserMapper.countByDeptId(sysDept.getId())>0) {
+            throw new ParamException("The department has users, delete failed");
+        }
+        sysDeptMapper.deleteByPrimaryKey(deptId);
     }
 
 

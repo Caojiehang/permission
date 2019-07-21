@@ -378,6 +378,28 @@
                 var aclModuleId = $(this).attr("data-id");
                 handleAclModuleSelected(aclModuleId);
             });
+            $(".aclModule-delete").click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var aclModuleId = $(this).attr("data-id");
+                var aclModuleName = $(this).attr("data-name");
+                if (confirm("Confirm to delete[" + aclModuleName + "]?")) {
+                    $.ajax({
+                        url: "/sys/aclModule/delete.json",
+                        data: {
+                            id: aclModuleId
+                        },
+                        success: function (result) {
+                            if (result.ret) {
+                                showMessage("Delete[" + aclModuleName + "]", "Successfully", true);
+                                loadAclModuleTree();
+                            } else {
+                                showMessage("Delete[" + aclModuleName + "]", result.msg, false);
+                            }
+                        }
+                    });
+                }
+            });
 
             $(".aclModule-edit").click(function (e) {
                 e.preventDefault();
@@ -446,7 +468,7 @@
                     renderAclListAndPage(result, url);
                 }
             })
-         console.log("load acl list , id:" +aclModuleId)
+         //console.log("load acl list , id:" +aclModuleId)
         }
         function renderAclListAndPage(result,url) {
             if(result.ret) {
@@ -494,6 +516,25 @@
             }
         }
         function bindAclClick() {
+            $(".acl-role").click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var aclId = $(this).attr("data-id");
+                $.ajax({
+                    url: "/sys/acl/acls.json",
+                    data: {
+                        aclId: aclId
+                    },
+                    type: 'POST',
+                    success: function (result) {
+                        if(result.ret) {
+                            console.log(result);
+                        } else {
+                            showMessage("Obtain permission allocated role and user",result.msg,false);
+                        }
+                    }
+                })
+            });
             $(".acl-edit").click(function (e) {
                 e.preventDefault();
                 e.stopPropagation();

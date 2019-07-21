@@ -17,7 +17,6 @@ import java.io.IOException;
  **/
 @Slf4j
 public class LoginFilter implements Filter {
-
     public void init(FilterConfig filterConfig) throws ServletException {
 
     }
@@ -33,7 +32,6 @@ public class LoginFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
-        String servletPath = request.getServletPath();
         SysUser sysUser = (SysUser) request.getSession().getAttribute("user");
         if(sysUser == null) {
             String path = "/signin.jsp";

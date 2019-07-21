@@ -169,4 +169,9 @@
   </if>
 </select>
   <!-- mapper configuration  should be noticed -->
+<select id="countByParentId" parameterType="int" resultType="int">
+  select count(1)
+  from sys_dept
+  where parent_id = #{deptId}
+</select>
 </mapper>

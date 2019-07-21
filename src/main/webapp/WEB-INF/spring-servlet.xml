@@ -23,6 +23,7 @@
     <mvc:resources location="/css/" mapping="/css/**"/>
     <mvc:resources location="/bootstrap3.3.5/" mapping="/bootstrap3.3.5/**"/>
     <mvc:resources location="/assets/" mapping="/assets/**"/>
+    <mvc:resources location="/ztree/" mapping="/ztree/**"/>
 
 <!--    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>-->
     <bean class="com.jiehang.common.SpringExceptionResolver"/>
@@ -34,7 +35,5 @@
         <property name="suffix" value=".jsp" />
     </bean>
     <bean class="com.jiehang.common.ApplicationContextHelper" lazy-init="false"/>
-
-
 
 </beans>

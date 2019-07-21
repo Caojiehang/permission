@@ -2,6 +2,7 @@ package com.jiehang.service;
 
 import com.google.common.base.Preconditions;
 import com.jiehang.common.RequestHolder;
+import com.jiehang.dao.SysAclMapper;
 import com.jiehang.dao.SysAclModuleMapper;
 import com.jiehang.exception.ParamException;
 import com.jiehang.model.SysAclModule;
@@ -27,6 +28,8 @@ import java.util.List;
 public class SysAclModuleService {
     @Resource
     private SysAclModuleMapper sysAclModuleMapper;
+    @Resource
+    private SysAclMapper sysAclMapper;
 
     /**
      * add method
@@ -125,6 +128,22 @@ public class SysAclModuleService {
             return null;
         }
         return sysAclModule.getLevel();
+    }
+
+    /**
+     * delete permission module
+     * @param aclModuleId
+     */
+    public void delete(int aclModuleId) {
+        SysAclModule sysAclModule = sysAclModuleMapper.selectByPrimaryKey(aclModuleId);
+        Preconditions.checkNotNull(sysAclModule,"Permission module is not existed");
+        if(sysAclModuleMapper.countByParentId(sysAclModule.getId()) > 0) {
+            throw new ParamException("Sub module is existed, delete failed");
+        }
+        if(sysAclMapper.countByAclModuleId(sysAclModule.getId()) > 0 ) {
+            throw new ParamException("The module has permissions, delete failed");
+        }
+        sysAclModuleMapper.deleteByPrimaryKey(aclModuleId);
     }
 
 }

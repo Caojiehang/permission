@@ -23,7 +23,7 @@ public class DeptParam {
      * department name
      */
     @NotBlank(message = "depart name can not be empty")
-    @Length(max = 15,min = 2, message = "The length of department name should be between 2 and 15 words")
+    @Length(max = 200,min = 2, message = "The length of department name should be between 2 and 200 words")
     private String name;
     /**
      * up-level id

@@ -7,6 +7,7 @@ import com.jiehang.service.SysTreeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -44,6 +45,13 @@ public class SysAclModuleController {
     @ResponseBody
     public JsonData updateAclModule(AclModuleParam param) {
         sysAclModuleService.update(param);
+        return JsonData.success();
+    }
+
+    @RequestMapping("/delete.json")
+    @ResponseBody
+    public JsonData delete(@RequestParam("id") int id) {
+        sysAclModuleService.delete(id);
         return JsonData.success();
     }
 
