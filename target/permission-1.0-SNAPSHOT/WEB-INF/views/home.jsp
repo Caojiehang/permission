@@ -11,7 +11,6 @@
     <title>Home</title>
     <jsp:include page="/common/backend_common.jsp"/>
 </head>
-
 <body class="no-skin">
 <div class="breadcrumbs ace-save-state" id="breadcrumbs">
     <ul class="breadcrumb">

@@ -1,13 +1,18 @@
 package com.jiehang.service;
 
 import com.google.common.collect.Lists;
+import com.jiehang.beans.CacheKeyConstants;
 import com.jiehang.common.RequestHolder;
 import com.jiehang.dao.SysAclMapper;
 import com.jiehang.dao.SysRoleAclMapper;
 import com.jiehang.dao.SysRoleUserMapper;
 import com.jiehang.model.SysAcl;
 import com.jiehang.model.SysUser;
+import com.jiehang.util.JsonMapper;
+import com.jiehang.util.StringUtil;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.codehaus.jackson.type.TypeReference;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -30,6 +35,8 @@ public class SysCoreService {
 
     @Resource
     private SysRoleAclMapper sysRoleAclMapper;
+    @Resource
+    private SysCacheService sysCacheService;
 
     /**
      * get current user permission list
@@ -101,7 +108,7 @@ public class SysCoreService {
         if(CollectionUtils.isEmpty(aclList)) {
             return true;
         }
-        List<SysAcl> userAclIdList = getCurrentUserAclList();
+        List<SysAcl> userAclIdList = getCurrentUserAclListFromCache();
         Set<Integer> userAclIdSet = userAclIdList.stream().map(sysAcl -> sysAcl.getId()).collect(Collectors.toSet());
         boolean hasValidAcl = false;
         // regulation : one permission for accessing permission
@@ -121,5 +128,26 @@ public class SysCoreService {
         }
 
         return false;
+    }
+
+    /**
+     * get current user acl from  cache
+     * 1. first to search cache value
+     * 2. if null add to cache
+     * 3. next time come to cache to obtain value
+     * @return
+     */
+    public List<SysAcl> getCurrentUserAclListFromCache() {
+        int userId = RequestHolder.getCurrentHolder().getId();
+        String cacheValue = sysCacheService.getFromCache(CacheKeyConstants.USER_ACLS,String.valueOf(userId));
+        if(StringUtils.isBlank(cacheValue)) {
+            List<SysAcl> aclList = getCurrentUserAclList();
+            if (CollectionUtils.isNotEmpty(aclList)) {
+                sysCacheService.saveCache(JsonMapper.obj2String(aclList), 600, CacheKeyConstants.USER_ACLS, String.valueOf(userId));
+            }
+            return aclList;
+        }
+        return JsonMapper.string2Obj(cacheValue, new TypeReference<List<SysAcl>>() {
+        });
     }
 }
