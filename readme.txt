@@ -25,3 +25,7 @@ Permission interception basic logic implement:
                       2. Permission filter: get current login user and allocated permissions, judge whether he has permission to access related resources, if not, jump to no authorited page
                       3. Once user has one permission under one permission module, he is allocated to access the resources
 Home page: calendar and event display(will implement backend)
+Redis cache usage: 1. For permission interception, store current user permission to the cache
+                   2. others also can be added to cache(under consideration)
+Operation log: doing....
+
