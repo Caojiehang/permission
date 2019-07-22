@@ -83,7 +83,7 @@
         </script>
         <ul class="nav nav-list">
             <li class="active">
-                <a class="popstyle" href="/sys/user/page.do" target="_blank">
+                <a class="popstyle" href="/sys/users/home.page" target="_blank">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text"> Home </span>
                 </a>
@@ -95,7 +95,6 @@
                     <span class="menu-text">System </span>
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
-
                 <b class="arrow"></b>
 
                 <ul class="submenu">
@@ -164,7 +163,7 @@
         </script>
     </div>
     <div class="main-content">
-        <iframe id="innerFrame" src="/sys/dept/dept.page" width="99%" style="min-height: 768px;"></iframe>
+        <iframe id="innerFrame" src="/sys/users/home.page" width="99%" style="min-height: 768px;"></iframe>
     </div>
     <!-- /.main-content -->
     <a href="index.html#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse display">
@@ -173,7 +172,6 @@
 
 </div>
 <!-- /.main-container -->
-
 
 <!-- basic scripts -->
 
@@ -200,7 +198,6 @@
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 <!-- page specific plugin scripts -->
-
 <!--[if lte IE 8]>
 <script src="/assets/js/excanvas.min.js"></script>
 <![endif]-->
@@ -215,7 +212,6 @@
 <!-- ace scripts -->
 <script src="/assets/js/ace-elements.min.js"></script>
 <script src="/assets/js/ace.min.js"></script>
-
 <script>
     $(document).ready(function () {
         $(".popstyle").removeAttr("target");

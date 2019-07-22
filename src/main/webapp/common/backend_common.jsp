@@ -17,10 +17,12 @@
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"/>
 <!-- page specific plugin styles -->
+<link rel="stylesheet" href="/assets/css/jquery-ui.custom.min.css" />
+<link rel="stylesheet" href="/assets/css/fullcalendar.min.css" />
 <!-- text fonts -->
 <link rel="stylesheet" href="/assets/css/google-fonts.css"/>
 <!-- ace styles -->
-<link rel="stylesheet" href="/assets/css/ace.min.css"/>
+<link rel="stylesheet" href="/assets/css/ace.min.css" />
 <!--[if lte IE 9]>
 <link rel="stylesheet" href="/assets/css/ace-part2.min.css"/>
 <![endif]-->
@@ -40,14 +42,15 @@
 <script src="/js/html5shiv.min.js"></script>
 <script src="/js/respond.min.js"></script>
 <![endif]-->
-
 <script src="/js/jquery-1.9.1.min.js"></script>
 <script src="/assets/js/jquery-ui.min.js"></script>
 <script src="/assets/js/jquery.gritter.min.js"></script>
 <script src="/assets/js/chosen.jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/mustache.js/2.2.1/mustache.js"></script>
 <script src="/bootstrap3.3.5/js/bootstrap.min.js"></script>
-
+<script src="/assets/js/date-time/moment.min.js"></script>
+<script src="/assets/js/fullcalendar.min.js"></script>
+<script src="/assets/js/bootbox.js"></script>
 <script type="text/javascript">
     // display notification info
     function showMessage(title, msg, isSuccess) {

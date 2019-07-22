@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>无权限访问</title>
+    <title>Unprivileged access</title>
     <jsp:include page="/common/backend_common.jsp"/>
 </head>
 <body class="no-skin" youdao="bind" style="background: white">
@@ -25,31 +25,31 @@
                         <h1 class="grey lighter smaller">
                             <span class="blue bigger-125">
                                 <i class="ace-icon fa fa-random"></i>
-                                无权限访问
+                                Not allowed to access
                             </span>
                         </h1>
 
                         <hr>
                         <h3 class="lighter smaller">
-                            一定是哪里姿势不对了~
+                            something problems
                         </h3>
 
                         <div class="space"></div>
                         <div>
-                            <h4 class="lighter smaller">可以尝试以下:</h4>
+                            <h4 class="lighter smaller">Try to:</h4>
                             <ul class="list-unstyled spaced inline bigger-110 margin-15">
                                 <li>
                                     <i class="ace-icon fa fa-hand-o-right blue"></i>
-                                    检查输入的页面地址
+                                    Check url
                                 </li>
                                 <li>
                                     <i class="ace-icon fa fa-hand-o-right blue"></i>
-                                    阅读FAQ
+                                    Read FAQ
                                 </li>
 
                                 <li>
                                     <i class="ace-icon fa fa-hand-o-right blue"></i>
-                                    联系管理员开通权限
+                                    Contact with admin
                                 </li>
                             </ul>
                         </div>
@@ -60,7 +60,7 @@
                         <div class="center">
                             <a href="javascript:history.back()" class="btn btn-grey">
                                 <i class="ace-icon fa fa-arrow-left"></i>
-                                上一页
+                                Forward
                             </a>
 
                             <a href="#" class="btn btn-primary">
