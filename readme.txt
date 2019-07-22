@@ -24,3 +24,4 @@ Permission interception basic logic implement:
                       1. Super admin can access all resources (Admin)
                       2. Permission filter: get current login user and allocated permissions, judge whether he has permission to access related resources, if not, jump to no authorited page
                       3. Once user has one permission under one permission module, he is allocated to access the resources
+Home page: calendar and event display(will implement backend)
