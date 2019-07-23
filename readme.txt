@@ -27,5 +27,5 @@ Permission interception basic logic implement:
 Home page: calendar and event display(will implement backend)
 Redis cache usage: 1. For permission interception, store current user permission to the cache
                    2. others also can be added to cache(under consideration)
-Operation log: doing....
+Operation log: completed log display and search function, recover operation
 
