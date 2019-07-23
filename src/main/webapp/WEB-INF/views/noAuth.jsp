@@ -15,11 +15,9 @@
 <div class="main-content-inner">
     <div class="page-content">
         <!-- /.ace-settings-container -->
-
         <div class="row">
             <div class="col-xs-12">
                 <!-- PAGE CONTENT BEGINS -->
-
                 <div class="error-container">
                     <div class="well">
                         <h1 class="grey lighter smaller">
@@ -63,7 +61,7 @@
                                 Forward
                             </a>
 
-                            <a href="#" class="btn btn-primary">
+                            <a href="/sys/users/home.page" class="btn btn-primary">
                                 <i class="ace-icon fa fa-tachometer"></i>
                                 Dashboard
                             </a>

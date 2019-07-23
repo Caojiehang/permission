@@ -36,7 +36,7 @@
       #{remark,jdbcType=VARCHAR}, #{operator,jdbcType=VARCHAR}, #{operateTime,jdbcType=TIMESTAMP}, 
       #{operateIp,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.jiehang.model.SysAclModule" >
+  <insert id="insertSelective" parameterType="com.jiehang.model.SysAclModule" keyProperty="id" useGeneratedKeys="true">
     insert into Sys_acl_module
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -153,7 +153,7 @@
     select
     <include refid="Base_Column_List"/>
     from sys_acl_module
-    where level like #{level} || '.%' -- level like '0.%'
+    where level like #{level}
   </select>
   <update id="batchUpdateLevel" parameterType="map">
     <foreach collection="sysAclModuleList" item="sysAclModule" separator=";">

@@ -30,6 +30,9 @@ public class SysDeptService {
 
     @Resource
     private SysUserMapper sysUserMapper;
+
+    @Resource
+    private SysLogService sysLogService;
     /**
      * save operation
      * @param param
@@ -55,6 +58,7 @@ public class SysDeptService {
          * insert selective: only handle input value columns without others.
          */
         sysDeptMapper.insertSelective(dept);
+        sysLogService.saveDeptLog(null,dept);
 
     }
 
@@ -83,6 +87,7 @@ public class SysDeptService {
         after.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));//TODO:
         after.setOperateTime(new Date());
         updateWithChild(before,after);
+        sysLogService.saveDeptLog(before,after);
     }
 
     /**
@@ -108,7 +113,6 @@ public class SysDeptService {
             }
         }
         sysDeptMapper.updateByPrimaryKey(after);
-
     }
 
     /**

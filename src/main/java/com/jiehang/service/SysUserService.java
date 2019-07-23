@@ -27,6 +27,8 @@ public class SysUserService {
 
     @Resource
     private SysUserMapper sysUserMapper;
+    @Resource
+    private SysLogService sysLogService;
 
     /**
      * add new user
@@ -56,6 +58,7 @@ public class SysUserService {
         sysUser.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
         sysUser.setOperateTime(new Date());
         sysUserMapper.insertSelective(sysUser);
+        sysLogService.saveUserLog(null,sysUser);
         //todo: send email to user but will increase the response time for adding operation
 //        Mail mail = new Mail();
 //        mail.setSubject("Login password");
@@ -89,6 +92,7 @@ public class SysUserService {
         after.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));//TODO:
         after.setOperateTime(new Date());
         sysUserMapper.updateByPrimaryKeySelective(after);
+        sysLogService.saveUserLog(before,after);
     }
 
     /**

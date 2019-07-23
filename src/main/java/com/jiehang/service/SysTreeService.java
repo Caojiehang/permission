@@ -124,7 +124,7 @@ public class SysTreeService {
     }
 
     /**
-     *
+     * Bind permission with related permission module by sequence
      * @param aclModuleLevelDtoList
      * @param moduleIdAclMap
      */

@@ -27,8 +27,13 @@ import java.util.List;
 public class SysAclService {
     @Resource
     private SysAclMapper sysAclMapper;
+    @Resource
+    private  SysLogService sysLogService;
 
-
+    /**
+     * save permission point
+     * @param param
+     */
     public void save(AclParam param) {
         BeanValidator.check(param);
         if(checkExist(param.getAclModuleId(),param.getName(),param.getId())) {
@@ -47,9 +52,13 @@ public class SysAclService {
         sysAcl.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
         sysAcl.setOperateTime(new Date());
         sysAclMapper.insertSelective(sysAcl);
+        sysLogService.saveAclLog(null,sysAcl);
     }
 
-
+    /**
+     * update permission point
+     * @param param
+     */
     public void update(AclParam param) {
         BeanValidator.check(param);
         if(checkExist(param.getAclModuleId(),param.getName(),param.getId())) {
@@ -71,19 +80,35 @@ public class SysAclService {
         after.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
         after.setOperateTime(new Date());
         sysAclMapper.updateByPrimaryKeySelective(after);
-
-
+        sysLogService.saveAclLog(before,after);
     }
 
+    /**
+     *  check existed
+     * @param aclModuleId
+     * @param name
+     * @param id
+     * @return
+     */
     private boolean checkExist(int aclModuleId,String name,Integer id) {
         return sysAclMapper.countByNameAndAclModuleId(aclModuleId,name,id) > 0;
     }
 
+    /**
+     * generate permission code
+     * @return
+     */
     private String generateCode() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
         return dateFormat.format(new Date()) + "_"+(int)(Math.random()*100);
     }
 
+    /**
+     * Page display
+     * @param aclModuleId
+     * @param page
+     * @return
+     */
     public PageResult<SysAcl> getPageByAclModuleId(int aclModuleId, PageQuery page) {
         BeanValidator.check(page);
         int count = sysAclMapper.countByAclModuleId(aclModuleId);

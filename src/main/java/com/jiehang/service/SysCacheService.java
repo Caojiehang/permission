@@ -55,6 +55,27 @@ public class SysCacheService {
     }
 
     /**
+     * delete cache todo: consider
+     * @param deleteValue
+     * @param prefix
+     * @param keys
+     */
+    public void deleteCache(String deleteValue, CacheKeyConstants prefix,String... keys) {
+        if(deleteValue == null) {
+            return;
+        }
+        ShardedJedis shardedJedis = null;
+        try {
+            String cacheKey = generateCacheKey(prefix,keys);
+            shardedJedis = redisPool.instance();
+            shardedJedis.del(cacheKey);
+        }catch (Exception e) {
+            log.error("delete cache failed, prefix:{}, keys:{}",prefix.name(),JsonMapper.obj2String(keys),e);
+        }
+
+    }
+
+    /**
      * get data from cache
      * @param prefix
      * @param keys

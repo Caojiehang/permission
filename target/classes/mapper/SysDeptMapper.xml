@@ -36,7 +36,7 @@
       #{operator,jdbcType=VARCHAR}, #{operateTime,jdbcType=TIMESTAMP}, #{operateIp,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.jiehang.model.SysDept" >
+  <insert id="insertSelective" parameterType="com.jiehang.model.SysDept" keyProperty="id" useGeneratedKeys="true" >
     insert into Sys_dept
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >

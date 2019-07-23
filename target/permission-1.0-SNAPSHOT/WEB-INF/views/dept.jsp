@@ -98,22 +98,22 @@
     <form id="deptForm">
         <table class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
             <tr>
-                <td style="width: 80px;"><label for="parentId">up-level dept</label></td>
+                <td style="width: 80px;"><label for="parentId">Department Category</label><label style="color: #be0000">*</label></td>
                 <td>
                     <select id="parentId" name="parentId" data-placeholder="select dept" style="width: 200px;"></select>
                     <input type="hidden" name="id" id="deptId"/>
                 </td>
             </tr>
             <tr>
-                <td><label for="deptName">name</label></td>
+                <td><label for="deptName">Name</label><label style="color: #be0000">*</label></td>
                 <td><input type="text" name="name" id="deptName" value="" class="text ui-widget-content ui-corner-all"></td>
             </tr>
             <tr>
-                <td><label for="deptSeq">sequence</label></td>
+                <td><label for="deptSeq">Sequence</label><label style="color: #be0000">*</label></td>
                 <td><input type="text" name="seq" id="deptSeq" value="1" class="text ui-widget-content ui-corner-all "></td>
             </tr>
             <tr>
-                <td><label for="deptRemark">comment</label></td>
+                <td><label for="deptRemark">Comment</label></td>
                 <td><textarea name="remark" id="deptRemark" class="text ui-widget-content ui-corner-all" rows="3" cols="25"></textarea></td>
             </tr>
         </table>
@@ -123,26 +123,26 @@
     <form id="userForm">
         <table class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
             <tr>
-                <td style="width: 80px;"><label for="parentId">department</label></td>
+                <td style="width: 80px;"><label for="parentId">Department</label><label style="color: #be0000">*</label></td>
                 <td>
                     <select id="deptSelectId" name="deptId" data-placeholder="select dept" style="width: 200px;"></select>
                 </td>
             </tr>
             <tr>
-                <td><label for="userName">name</label></td>
+                <td><label for="userName">Name</label><label style="color: #be0000">*</label></td>
                 <input type="hidden" name="id" id="userId"/>
                 <td><input type="text" name="username" id="userName" value="" class="text ui-widget-content ui-corner-all"></td>
             </tr>
             <tr>
-                <td><label for="userMail">email</label></td>
+                <td><label for="userMail">Email</label><label style="color: #be0000">*</label></td>
                 <td><input type="text" name="mail" id="userMail" value="" class="text ui-widget-content ui-corner-all"></td>
             </tr>
             <tr>
-                <td><label for="userTelephone">telephone</label></td>
+                <td><label for="userTelephone">Telephone</label><label style="color: #be0000">*</label></td>
                 <td><input type="text" name="telephone" id="userTelephone" value="" class="text ui-widget-content ui-corner-all"></td>
             </tr>
             <tr>
-                <td><label for="userStatus">status</label></td>
+                <td><label for="userStatus">Status</label></td>
                 <td>
                     <select id="userStatus" name="status" data-placeholder="select status" style="width: 150px;">
                         <option value="1">valid</option>
@@ -152,7 +152,7 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="userRemark">comment</label></td>
+                <td><label for="userRemark">Comment</label></td>
                 <td><textarea name="remark" id="userRemark" class="text ui-widget-content ui-corner-all" rows="3" cols="25"></textarea></td>
             </tr>
         </table>

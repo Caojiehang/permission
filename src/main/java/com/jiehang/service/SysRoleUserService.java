@@ -2,12 +2,16 @@ package com.jiehang.service;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import com.jiehang.beans.LogType;
 import com.jiehang.common.RequestHolder;
+import com.jiehang.dao.SysLogMapper;
 import com.jiehang.dao.SysRoleUserMapper;
 import com.jiehang.dao.SysUserMapper;
+import com.jiehang.model.SysLogWithBLOBs;
 import com.jiehang.model.SysRoleUser;
 import com.jiehang.model.SysUser;
 import com.jiehang.util.IpUtil;
+import com.jiehang.util.JsonMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.stereotype.Service;
@@ -31,6 +35,8 @@ public class SysRoleUserService {
     private SysRoleUserMapper sysRoleUserMapper;
     @Resource
     private SysUserMapper sysUserMapper;
+    @Resource
+    private SysLogMapper sysLogMapper;
 
     /**
      * get user list
@@ -59,7 +65,14 @@ public class SysRoleUserService {
             }
         }
         updateRoleUsers(roleId,userIdList);
+        saveRoleUserLog(roleId,originUserIdList,userIdList);
     }
+
+    /**
+     * Update Role and user relationship
+     * @param roleId
+     * @param userIdList
+     */
     @Transactional
     public void updateRoleUsers(int roleId,List<Integer> userIdList) {
         sysRoleUserMapper.deleteByRoleId(roleId);
@@ -78,6 +91,25 @@ public class SysRoleUserService {
             roleUserList.add(roleUser);
         }
         sysRoleUserMapper.batchInsert(roleUserList);
+    }
+    /**
+     * save Role and user operation log
+     * todo: now only show user id on the value, can show the username
+     * @param roleId
+     * @param before
+     * @param after
+     */
+    private void saveRoleUserLog(int roleId,List<Integer> before,List<Integer> after) {
+        SysLogWithBLOBs sysLog = new SysLogWithBLOBs();
+        sysLog.setType(LogType.TYPE_ROLE_USER);
+        sysLog.setTargetId(roleId);
+        sysLog.setOldValue(before == null ? "" : JsonMapper.obj2String(before));
+        sysLog.setNewValue(after == null ? "" :JsonMapper.obj2String(after));
+        sysLog.setOperator(RequestHolder.getCurrentHolder().getUsername());
+        sysLog.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
+        sysLog.setOperateTime(new Date());
+        sysLog.setStatus(1);
+        sysLogMapper.insertSelective(sysLog);
     }
 
 }
