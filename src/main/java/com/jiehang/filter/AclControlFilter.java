@@ -31,6 +31,12 @@ public class AclControlFilter implements Filter {
     private static Set<String> exclusionUrlSet = Sets.newConcurrentHashSet();
 
     private final static String noAuthUrl = "/sys/users/noAuth.page";
+
+    /**
+     *
+     * @param filterConfig
+     * @throws ServletException
+     */
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         String exclusionUrls = filterConfig.getInitParameter("exclusionUrls");
@@ -39,6 +45,14 @@ public class AclControlFilter implements Filter {
         exclusionUrlSet.add(noAuthUrl);
     }
 
+    /**
+     *
+     * @param servletRequest
+     * @param servletResponse
+     * @param filterChain
+     * @throws IOException
+     * @throws ServletException
+     */
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
@@ -65,6 +79,12 @@ public class AclControlFilter implements Filter {
         return;
     }
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws IOException
+     */
     private void noAuth(HttpServletRequest request,HttpServletResponse response) throws IOException {
        String servletPath = request.getServletPath();
        if(servletPath.endsWith(".json")) {
@@ -78,6 +98,12 @@ public class AclControlFilter implements Filter {
        }
     }
 
+    /**
+     *
+     * @param url
+     * @param response
+     * @throws IOException
+     */
     private void clientRedirect(String url,HttpServletResponse response) throws IOException {
         response.setHeader("Content-Type","text/html");
         response.getWriter().print("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
@@ -85,6 +111,7 @@ public class AclControlFilter implements Filter {
                 + "<title>loading...</title>\n" + "</head>\n" + "<body>\n" + "loading，please wait...\n" + "<script type=\"text/javascript\">//<![CDATA[\n"
                 + "window.location.href='" + url + "?ret='+encodeURIComponent(window.location.href);\n" + "//]]></script>\n" + "</body>\n" + "</html>\n");
     }
+
     @Override
     public void destroy() {
 

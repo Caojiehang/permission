@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import com.jiehang.beans.PageQuery;
 import com.jiehang.beans.PageResult;
 import com.jiehang.common.JsonData;
+import com.jiehang.common.RequestHolder;
 import com.jiehang.model.SysUser;
 import com.jiehang.param.UserParam;
 import com.jiehang.service.SysRoleService;
@@ -77,5 +78,29 @@ public class SysUserController {
     @RequestMapping("/home.page")
     public ModelAndView home() {
         return new ModelAndView("home");
+    }
+    @RequestMapping("/profile.page")
+    public ModelAndView profile() {
+        return new ModelAndView("profile");
+    }
+    @RequestMapping("/changePassword.json")
+    @ResponseBody
+    public JsonData resetPassword(@RequestParam("telephone") String telephone,@RequestParam("password") String password, @RequestParam("confirmPassword") String confirmPassword) {
+        if(!password.equals(confirmPassword) || password.isEmpty()) {
+           return JsonData.fail("something error,please check input password");
+        }
+        sysUserService.reSetPassword(telephone,password);
+        return JsonData.success();
+    }
+    @RequestMapping("/userInfo.json")
+    @ResponseBody
+    public JsonData userInfo() {
+        SysUser sysUser = sysUserService.getUserInfo(RequestHolder.getCurrentHolder().getId());
+        Map<String,Object> map = Maps.newHashMap();
+        map.put("username",sysUser.getUsername());
+        map.put("comment",sysUser.getRemark());
+        map.put("email",sysUser.getMail());
+        map.put("telephone",sysUser.getTelephone());
+        return JsonData.success(map);
     }
 }

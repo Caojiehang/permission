@@ -311,9 +311,6 @@
                 });
             })
         }
-
-
-
         function handleDeptSelected(deptId) {
             //lastClickDeptId = deptId;
             if(lastClickDeptId != -1) {
@@ -424,6 +421,7 @@
                     success: function (result) {
                         if(result.ret) {
                             console.log(result);
+                            //todo: add dialog display
                         } else {
                             showMessage("Obtain user permission data",result.msg,false);
                         }

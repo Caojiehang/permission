@@ -41,14 +41,12 @@
                         </li>
 
                         <li>
-                            <a href="profile.html">
+                            <a id="profile_user" href="/sys/users/profile.page">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
                         </li>
-
                         <li class="divider"></li>
-
                         <li>
                             <a href="/logout.page">
                                 <i class="ace-icon fa fa-power-off"></i>
@@ -144,6 +142,14 @@
                         </a>
                         <b class="arrow"></b>
                     </li>
+                    <li class="">
+                        <a class="popstyle" href="/sys/users/profile.page" target="_blank">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            User Profile
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+
                 </ul>
             </li>
         </ul>
@@ -218,7 +224,7 @@
             tmp = $this.attr("href");
             $this.attr("data", tmp);
             $this.attr("href", "javascript:void(0)");
-        })
+        });
 
         $(".popstyle").click(function () {
             var $this = $(this)

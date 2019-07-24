@@ -8,39 +8,14 @@
   <component name="ChangeListManager">
     <list default="true" id="fa7f2cd3-07d3-47d3-807f-7a95eb320743" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/dao/SysLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/dao/SysLogMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysAclModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysAclModuleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysAclService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysAclService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysCacheService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysCacheService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysDeptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysDeptService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysLogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleAclService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleAclService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysTreeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysTreeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/filter/AclControlFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/filter/AclControlFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysAclMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysAclMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysAclModuleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysAclModuleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysDeptMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysDeptMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysLogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysLogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysRoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysUserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/acl.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/acl.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dept.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dept.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/noAuth.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/noAuth.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/beans/CacheKeyConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/beans/CacheKeyConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/model/SysLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/model/SysLog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/service/RedisPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/service/RedisPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysCacheService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysCacheService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SysAclModuleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/SysAclModuleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/beans/CacheKeyConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/beans/CacheKeyConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/model/SysLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/model/SysLog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/RedisPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/RedisPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysCacheService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysCacheService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysCoreService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysCoreService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysCoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysCoreService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/mapper/SysAclModuleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/mapper/SysAclModuleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/views/dept.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/views/dept.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/views/noAuth.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/views/noAuth.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.min.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -71,130 +46,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysLogService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-              <folding>
-                <element signature="e#2239#2256#0" expanded="true" />
-                <element signature="e#2339#2356#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/beans/LogType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
-              <caret line="73" column="38" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="38" />
-              <folding>
-                <element signature="e#2329#2330#0" expanded="true" />
-                <element signature="e#2376#2377#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysTreeService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2579">
-              <caret line="126" column="65" selection-start-line="126" selection-start-column="65" selection-end-line="126" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleUserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleAclService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="86" column="77" selection-start-line="86" selection-start-column="77" selection-end-line="86" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SysLogMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="165" column="16" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
-              <folding>
-                <element signature="e#6599#6603#0" expanded="true" />
-                <element signature="e#6693#6697#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/dao/SysLogMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysLogController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#736#737#0" expanded="true" />
-                <element signature="e#776#777#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/log.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5160">
-              <caret line="215" column="147" selection-start-line="215" selection-start-column="147" selection-end-line="215" selection-end-column="147" />
-              <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#1790#1796#0#HTML" expanded="true" />
-                <element signature="e#1796#1802#0#HTML" expanded="true" />
-                <element signature="e#1802#1808#0#HTML" expanded="true" />
-                <element signature="e#1808#1814#0#HTML" expanded="true" />
-                <element signature="e#1814#1820#0#HTML" expanded="true" />
-                <element signature="e#1820#1826#0#HTML" expanded="true" />
-                <element signature="e#3788#3794#0#HTML" expanded="true" />
-                <element signature="e#3794#3800#0#HTML" expanded="true" />
-                <element signature="e#3800#3806#0#HTML" expanded="true" />
-                <element signature="e#3806#3812#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -225,11 +77,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/SysRoleUserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/acl.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jiehang/filter/AclControlFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jiehang/dao/SysAclMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysAclController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/css/fullcalendar.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/date-time/moment.min.js" />
@@ -238,9 +85,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/assets/css/jquery-ui.custom.min.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/common/backend_common.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userprofile.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/redis.properties.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/redis.properties" />
@@ -255,9 +99,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jiehang/model/SysLog.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysCacheService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/noAuth.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dept.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysDeptService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysUserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysAclModuleService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysAclService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleService.java" />
@@ -276,6 +118,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleAclService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleUserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysTreeService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dept.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/acl.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jiehang/filter/AclControlFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.html.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.min.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysUserService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp" />
       </list>
     </option>
   </component>
@@ -294,10 +146,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="513" />
-    <option name="y" value="73" />
-    <option name="width" value="1466" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -308,6 +159,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -338,6 +191,32 @@
               <item name="permission" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jiehang" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="permission" type="b2602c69:ProjectViewProjectNode" />
+              <item name="permission" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jiehang" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="permission" type="b2602c69:ProjectViewProjectNode" />
+              <item name="permission" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jiehang" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="permission" type="b2602c69:ProjectViewProjectNode" />
+              <item name="permission" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -356,8 +235,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -639,17 +516,18 @@
       <workItem from="1563875798908" duration="2903000" />
       <workItem from="1563879172325" duration="482000" />
       <workItem from="1563882665759" duration="9518000" />
+      <workItem from="1563894024481" duration="519000" />
+      <workItem from="1563961654383" duration="10324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232482000" />
+    <option name="totallyTimeSpent" value="243325000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49855492" visible="true" weight="0.2924298" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49855492" visible="true" weight="0.31807083" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -660,7 +538,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4993895" weight="0.32834226" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.30160427" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.40748662" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.20427808" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -693,39 +571,6 @@
     <SUITE FILE_PATH="coverage/permission$Tomcat_8_5_42.ic" NAME="Tomcat 8.5.42 Coverage Results" MODIFIED="1563725261316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/util/BeanValidator.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userprofile.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/beans/CacheKeyConstans.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.8.1/jedis-2.8.1-sources.jar!/redis/clients/jedis/ShardedJedis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="143" column="16" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -759,13 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="1" column="10" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/filter/AclControlFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
         </state>
       </provider>
     </entry>
@@ -817,9 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysCacheService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
@@ -830,24 +665,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/acl.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2232">
-          <caret line="93" column="6" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/druid/1.0.20/druid-1.0.20-sources.jar!/com/alibaba/druid/wall/WallFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7583">
           <caret line="725" selection-start-line="725" selection-end-line="725" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/noAuth.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -858,31 +679,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysCoreService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dept.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="152" column="17" selection-start-line="152" selection-start-column="17" selection-end-line="152" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysDeptService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="114" column="48" selection-start-line="114" selection-start-column="48" selection-end-line="114" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="94" column="48" selection-start-line="94" selection-start-column="48" selection-end-line="94" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -964,13 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1536">
-          <caret line="64" column="6" lean-forward="true" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/flot/jquery.flot.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1047">
@@ -982,25 +775,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/log.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysLogService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5160">
-          <caret line="215" column="147" selection-start-line="215" selection-start-column="147" selection-end-line="215" selection-end-column="147" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1790#1796#0#HTML" expanded="true" />
-            <element signature="e#1796#1802#0#HTML" expanded="true" />
-            <element signature="e#1802#1808#0#HTML" expanded="true" />
-            <element signature="e#1808#1814#0#HTML" expanded="true" />
-            <element signature="e#1814#1820#0#HTML" expanded="true" />
-            <element signature="e#1820#1826#0#HTML" expanded="true" />
-            <element signature="e#3788#3794#0#HTML" expanded="true" />
-            <element signature="e#3794#3800#0#HTML" expanded="true" />
-            <element signature="e#3800#3806#0#HTML" expanded="true" />
-            <element signature="e#3806#3812#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="840">
+          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleAclService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="86" column="77" selection-start-line="86" selection-start-column="77" selection-end-line="86" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/beans/LogType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SysLogMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3960">
+          <caret line="165" column="16" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1011,76 +817,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SysLogMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysLogController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="165" column="16" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
+        <state relative-caret-position="672">
+          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
           <folding>
-            <element signature="e#6599#6603#0" expanded="true" />
-            <element signature="e#6693#6697#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysLogController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/log.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+        <state relative-caret-position="5040">
+          <caret line="210" column="56" selection-start-line="210" selection-start-column="48" selection-end-line="210" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/acl.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12672">
+          <caret line="528" column="48" selection-start-line="528" selection-start-column="48" selection-end-line="528" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/filter/AclControlFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/noAuth.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56306">
+          <caret line="2433" column="40" lean-forward="true" selection-start-line="2433" selection-start-column="40" selection-end-line="2433" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/common/JsonData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-723">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3207">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysTreeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="126" column="65" selection-start-line="126" selection-start-column="65" selection-end-line="126" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="220" column="30" selection-start-line="220" selection-start-column="30" selection-end-line="220" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysRoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-818">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysCoreService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1992">
+          <caret line="106" column="56" selection-start-line="106" selection-start-column="53" selection-end-line="106" selection-end-column="56" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#736#737#0" expanded="true" />
-            <element signature="e#776#777#0" expanded="true" />
+            <element signature="docComment;class#SysCoreService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dept.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11727">
+          <caret line="489" column="28" lean-forward="true" selection-start-line="489" selection-start-column="28" selection-end-line="489" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3048">
+          <caret line="148" column="23" lean-forward="true" selection-start-line="148" selection-start-column="23" selection-end-line="148" selection-end-column="23" />
+          <folding>
+            <element signature="e#6635#6636#0" expanded="true" />
+            <element signature="e#6680#6681#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="73" column="38" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="38" />
-          <folding>
-            <element signature="e#2329#2330#0" expanded="true" />
-            <element signature="e#2376#2377#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="725">
+          <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleAclService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="86" column="77" selection-start-line="86" selection-start-column="77" selection-end-line="86" selection-end-column="77" />
+        <state relative-caret-position="264">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleUserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/common/backend_common.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
+        <state relative-caret-position="1320">
+          <caret line="55" column="42" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysTreeService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2579">
-          <caret line="126" column="65" selection-start-line="126" selection-start-column="65" selection-end-line="126" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/service/SysLogService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-          <folding>
-            <element signature="e#2239#2256#0" expanded="true" />
-            <element signature="e#2339#2356#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/beans/LogType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        <state relative-caret-position="432">
+          <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="90" />
         </state>
       </provider>
     </entry>

@@ -10,6 +10,8 @@ import com.jiehang.exception.ParamException;
 import com.jiehang.model.SysUser;
 import com.jiehang.param.UserParam;
 import com.jiehang.util.*;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -141,6 +143,43 @@ public class SysUserService {
         return PageResult.<SysUser>builder().build();
     }
 
+    /**
+     * reset password
+     * super admin can reset all users password
+     * @param telephone
+     * @param password
+     */
+    public void reSetPassword(String telephone,String password) {
+        SysUser sysUser = sysUserMapper.findByKeyword(telephone);
+        SysUser currentUser = RequestHolder.getCurrentHolder();
+        if(sysUser != null) {
+            if(sysUser.getUsername().equals(currentUser.getUsername()) || currentUser.getUsername().equals("Admin")) {
+                String encryPassword = MD5Util.encrypt(password);
+                SysUser after = SysUser.builder().id(sysUser.getId())
+                        .username(sysUser.getUsername())
+                        .telephone(sysUser.getTelephone())
+                        .mail(sysUser.getMail())
+                        .deptId(sysUser.getDeptId())
+                        .status(sysUser.getStatus())
+                        .remark(sysUser.getRemark())
+                        .password(encryPassword).build();
+                after.setOperator(RequestHolder.getCurrentHolder().getUsername());
+                after.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
+                after.setOperateTime(new Date());
+                sysUserMapper.updateByPrimaryKeySelective(after);
+                sysLogService.saveUserLog(sysUser,after);
+            } else {
+                throw new ParamException("The telephone is not yours!");
+            }
+        } else {
+            throw new ParamException("The telephone is not existed");
+        }
+    }
+
+    public SysUser getUserInfo(int id) {
+        SysUser sysUser = sysUserMapper.selectByPrimaryKey(id);
+        return sysUser;
+    }
     /**
      * get All user list
      * @return

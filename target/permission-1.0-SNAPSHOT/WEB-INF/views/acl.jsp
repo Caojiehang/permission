@@ -529,6 +529,7 @@
                     success: function (result) {
                         if(result.ret) {
                             console.log(result);
+                            //todo: add dialog display
                         } else {
                             showMessage("Obtain permission allocated role and user",result.msg,false);
                         }
