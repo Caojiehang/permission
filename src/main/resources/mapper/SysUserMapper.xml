@@ -209,4 +209,16 @@
     select <include refid="Base_Column_List"/>
     from sys_user
   </select>
+  <select id="countByUserName" parameterType="string" resultType="int">
+    select count(1)
+    from sys_user
+    where username = #{userName}
+  </select>
+  <select id="getPageByUserName" parameterType="map" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />
+    from sys_user
+    where username = #{userName}
+    order by username ASC
+    LIMIT ${page.offset}, ${page.pageSize}
+  </select>
 </mapper>

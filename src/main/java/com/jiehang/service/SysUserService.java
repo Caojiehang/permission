@@ -144,6 +144,22 @@ public class SysUserService {
     }
 
     /**
+     * get user page by user name
+     * @param userName
+     * @param pageQuery
+     * @return
+     */
+    public PageResult<SysUser> getPageByUserName(String userName,PageQuery pageQuery) {
+        BeanValidator.check(pageQuery);
+        int count = sysUserMapper.countByUserName(userName);
+        if(count > 0) {
+            List<SysUser> list = sysUserMapper.getPageByUserName(userName,pageQuery);
+            return PageResult.<SysUser>builder().total(count)
+                    .data(list).build();
+        }
+        return PageResult.<SysUser>builder().build();
+    }
+    /**
      * reset password
      * super admin can reset all users password
      * @param telephone

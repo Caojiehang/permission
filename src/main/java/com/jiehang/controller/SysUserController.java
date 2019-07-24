@@ -67,6 +67,13 @@ public class SysUserController {
         PageResult<SysUser> result = sysUserService.getPageByDeptId(deptId,pageQuery);
         return JsonData.success(result);
     }
+
+    @RequestMapping("searchResult.json")
+    @ResponseBody
+    public JsonData searchResult(@RequestParam("userName") String userName, PageQuery pageQuery) {
+        PageResult<SysUser> result = sysUserService.getPageByUserName(userName,pageQuery);
+        return JsonData.success(result);
+    }
     @RequestMapping("/acls.json")
     @ResponseBody
     public JsonData acls(@RequestParam("userId") int userId) {

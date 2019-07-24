@@ -59,7 +59,10 @@
                         <div class="col-xs-6">
                             <div id = "dynamic-table_filter" class="dataTables_filter"><lable>
                                 Search: </lable>
-                                <input type="search" class="form-control input-sm" placeholder="username">
+                                <input type="search" class="form-control input-sm" placeholder="username" id="input_user">
+                                <button class="btn btn-info" type="button" id="submit-sch">
+                                    Submit
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -311,6 +314,12 @@
                 });
             })
         }
+        $("#submit-sch").click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var username = $("#input_user").val();
+            loadUserListByName(username);
+        });
         function handleDeptSelected(deptId) {
             //lastClickDeptId = deptId;
             if(lastClickDeptId != -1) {
@@ -325,6 +334,22 @@
             loadUserList(deptId);
         }
 
+        function loadUserListByName(userName) {
+            var pageSize = $("#pageSize").val();
+            var url = "/sys/users/searchResult.json?userName=" + userName;
+            var pageNo = $("#userPage .pageNo").val() || 1;
+            $.ajax({
+                url: url,
+                data: {
+                    pageSize: pageSize,
+                    pageNo : pageNo
+                },
+                success:function (result) {
+                    renderUserListAndPage(result,url);
+                }
+            })
+
+        }
         function loadUserList(deptId) {
             var pageSize = $("#pageSize").val();
             var url = "/sys/users/page.json?deptId=" + deptId;

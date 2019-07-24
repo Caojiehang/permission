@@ -25,6 +25,8 @@ public interface SysUserMapper {
     int countByTelephone(@Param("telephone") String telephone,@Param("id") Integer id);
 
     int countByDeptId(@Param("deptId") int deptId);
+    int countByUserName(@Param("userName") String userName);
+    List<SysUser> getPageByUserName(@Param("userName") String userName,@Param("page") PageQuery page);
 
     List<SysUser> getPageByDeptId(@Param("deptId") int deptId, @Param("page") PageQuery page);
     List<SysUser> getByIdList(@Param("idList") List<Integer> idList);
