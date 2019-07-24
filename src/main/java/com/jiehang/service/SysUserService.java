@@ -25,6 +25,7 @@ import java.util.List;
  * @Date 2019-07-13 15:16
  **/
 @Service
+@Slf4j
 public class SysUserService {
 
     @Resource
@@ -61,12 +62,27 @@ public class SysUserService {
         sysUser.setOperateTime(new Date());
         sysUserMapper.insertSelective(sysUser);
         sysLogService.saveUserLog(null,sysUser);
-        //todo: send email to user but will increase the response time for adding operation
-//        Mail mail = new Mail();
-//        mail.setSubject("Login password");
-//        mail.setReceivers(Collections.singleton(sysUser.getMail()));
-//        mail.setMessage(password);
-//        MailUtil.send(mail);
+        //todo: add new thread to handle this event,it is possible
+        Mail mail = new Mail();
+        mail.setSubject("Login password");
+        mail.setReceivers(Collections.singleton(sysUser.getMail()));
+        mail.setMessage(password);
+        Thread sendThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                MailUtil.send(mail);
+            }
+        });
+        try {
+            sendThread.start();
+        } catch (Exception e) {
+            log.error("send error",e);
+        } finally {
+            if(!sendThread.isInterrupted()) {
+                sendThread.interrupt();
+            }
+        }
+
     }
 
     /**

@@ -7,7 +7,7 @@ import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 
 @Slf4j
-public class MailUtil {
+public class MailUtil{
 
     public static boolean send(Mail mail) {
 
@@ -38,6 +38,5 @@ public class MailUtil {
             return false;
         }
     }
-
 }
 
