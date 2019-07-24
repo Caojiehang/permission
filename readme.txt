@@ -29,4 +29,5 @@ Redis cache usage: 1. For permission interception, store current user permission
                    2. others also can be added to cache(under consideration)
 Operation log: completed log display and search function, recover operation
 Profile display: display current user profile (username, telephone, email, comment) and add reset password function(user can only reset his password by telephone, admin can reset all users password by their phone number)
+User search function(user management): search user by username and display by page
 
