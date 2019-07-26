@@ -8,15 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fa7f2cd3-07d3-47d3-807f-7a95eb320743" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator/generator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/generator/generator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/bootbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/bootbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/date-time/moment.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/date-time/moment.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.validate.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/views/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/views/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/assets/js/bootbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/assets/js/bootbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/assets/js/date-time/moment.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/assets/js/date-time/moment.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/assets/js/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/assets/js/jquery.validate.min.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -93,12 +84,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generator/generator.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
+            <state relative-caret-position="504">
               <caret line="21" column="115" lean-forward="true" selection-start-line="21" selection-start-column="115" selection-end-line="21" selection-end-column="115" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-28200" />
           </provider>
         </entry>
       </file>
@@ -126,7 +124,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserCalendarController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
+            <state relative-caret-position="-72">
               <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -247,7 +245,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="1027" />
@@ -266,6 +264,11 @@
             <path>
               <item name="permission" type="b2602c69:ProjectViewProjectNode" />
               <item name="permission" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="permission" type="b2602c69:ProjectViewProjectNode" />
+              <item name="permission" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="permission" type="b2602c69:ProjectViewProjectNode" />
@@ -684,12 +687,12 @@
       <workItem from="1563974439410" duration="4401000" />
       <workItem from="1563996284998" duration="96000" />
       <workItem from="1564050424346" duration="44456000" />
-      <workItem from="1564166776469" duration="40000" />
+      <workItem from="1564166776469" duration="176000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="292333000" />
+    <option name="totallyTimeSpent" value="292469000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -739,13 +742,6 @@
     <SUITE FILE_PATH="coverage/permission$Tomcat_8_5_42.ic" NAME="Tomcat 8.5.42 Coverage Results" MODIFIED="1563725261316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/dao/SysRoleAclMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/param/RoleParam.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5">
@@ -1094,16 +1090,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserCalendarController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/param/EventParam.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -1121,11 +1107,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserCalendarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/generator/generator.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
+        <state relative-caret-position="504">
           <caret line="21" column="115" lean-forward="true" selection-start-line="21" selection-start-column="115" selection-end-line="21" selection-end-column="115" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28200" />
       </provider>
     </entry>
   </component>
