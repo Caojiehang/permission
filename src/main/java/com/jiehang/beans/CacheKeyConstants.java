@@ -16,6 +16,8 @@ public enum CacheKeyConstants {
     /**
      * User acls prefix
      */
-    USER_ACLS;
+    USER_ACLS,
+
+    EVENT_KEY
 
 }

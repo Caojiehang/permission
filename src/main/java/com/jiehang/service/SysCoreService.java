@@ -9,7 +9,6 @@ import com.jiehang.dao.SysRoleUserMapper;
 import com.jiehang.model.SysAcl;
 import com.jiehang.model.SysUser;
 import com.jiehang.util.JsonMapper;
-import com.jiehang.util.StringUtil;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.codehaus.jackson.type.TypeReference;

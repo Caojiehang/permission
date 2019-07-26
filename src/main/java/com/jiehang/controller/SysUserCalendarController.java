@@ -62,7 +62,10 @@ public class SysUserCalendarController {
     @RequestMapping("/events.json")
     @ResponseBody
     public JsonData show() {
-        List<EventDto> list = sysUserCalendarService.getEventListByUserId();
+        //from cache
+        List<EventDto> list = sysUserCalendarService.getEventListFromCache();
+        //from database
+        //List<EventDto> list = sysUserCalendarService.getEventListByUserId();
         return JsonData.success(list);
     }
 }

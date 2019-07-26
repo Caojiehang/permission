@@ -3,6 +3,10 @@ package com.jiehang.param;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -35,13 +39,12 @@ public class EventParam {
     /**
      * whether all day event 1: all day 0: not
      */
-//    @NotNull(message = "all day type should be add")
-//    @Min(value = 0,message = "invalid type")
-//    @Max(value = 1,message = "invalid type")
+    @NotNull(message = "all day type should be add")
+    @Min(value = 0,message = "invalid type")
+    @Max(value = 1,message = "invalid type")
     private Integer allday;
     /**
      * user id
      */
-//    @NotNull(message = "userId can not be empty")
     private Integer userId;
 }

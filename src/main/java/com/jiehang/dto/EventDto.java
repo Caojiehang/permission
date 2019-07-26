@@ -1,7 +1,9 @@
 package com.jiehang.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @ClassName EventDto
@@ -9,8 +11,10 @@ import lombok.Data;
  * @Author jiehangcao
  * @Date 2019-07-26 17:08
  **/
-@Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class EventDto  {
 
     private String id;
