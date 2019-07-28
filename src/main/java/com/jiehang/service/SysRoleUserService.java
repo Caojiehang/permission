@@ -69,6 +69,25 @@ public class SysRoleUserService {
     }
 
     /**
+     * recover role and user operation
+     * @param roleId
+     * @param userNameList
+     */
+    public void recoverRoleUsers(int roleId,List<String> userNameList) {
+        List<Integer> originUserIdList = sysRoleUserMapper.getUserIdListByRoleId(roleId);
+        List<Integer> userIdList = sysUserMapper.getIdListByNameList(userNameList);
+        if(originUserIdList.size() == userIdList.size()) {
+            Set<Integer> originUserIdSet = Sets.newHashSet(originUserIdList);
+            Set<Integer> userIdSet = Sets.newHashSet(userIdList);
+            originUserIdSet.removeAll(userIdSet);
+            if(CollectionUtils.isEmpty(originUserIdSet)) {
+                return;
+            }
+        }
+        updateRoleUsers(roleId,userIdList);
+        saveRoleUserLog(roleId,originUserIdList,userIdList);
+    }
+    /**
      * Update Role and user relationship
      * @param roleId
      * @param userIdList
@@ -94,7 +113,6 @@ public class SysRoleUserService {
     }
     /**
      * save Role and user operation log
-     * todo: now only show user id on the value, can show the username
      * @param roleId
      * @param before
      * @param after
@@ -103,8 +121,10 @@ public class SysRoleUserService {
         SysLogWithBLOBs sysLog = new SysLogWithBLOBs();
         sysLog.setType(LogType.TYPE_ROLE_USER);
         sysLog.setTargetId(roleId);
-        sysLog.setOldValue(before == null ? "" : JsonMapper.obj2String(before));
-        sysLog.setNewValue(after == null ? "" :JsonMapper.obj2String(after));
+        List<String> beforeList = sysUserMapper.getNameByIdList(before);
+        List<String> afterList = sysUserMapper.getNameByIdList(after);
+        sysLog.setOldValue(before == null ? "" : JsonMapper.obj2String(beforeList));
+        sysLog.setNewValue(after == null ? "" :JsonMapper.obj2String(afterList));
         sysLog.setOperator(RequestHolder.getCurrentHolder().getUsername());
         sysLog.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
         sysLog.setOperateTime(new Date());

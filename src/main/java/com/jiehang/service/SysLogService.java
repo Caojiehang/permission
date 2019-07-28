@@ -133,14 +133,13 @@ public class SysLogService {
             case LogType.TYPE_ROLE_ACL:
                 SysRole aclRole = sysRoleMapper.selectByPrimaryKey(sysLog.getTargetId());
                 Preconditions.checkNotNull(aclRole,"Role is not existed");
-                sysRoleAclService.changeRoleAcls(sysLog.getTargetId(),JsonMapper.string2Obj(sysLog.getOldValue(), new TypeReference<List<Integer>>() {
+                sysRoleAclService.recoverRoleAcls(sysLog.getTargetId(),JsonMapper.string2Obj(sysLog.getOldValue(), new TypeReference<List<String>>() {
                 }));
-
                 break;
             case LogType.TYPE_ROLE_USER:
                 SysRole userRole = sysRoleMapper.selectByPrimaryKey(sysLog.getTargetId());
                 Preconditions.checkNotNull(userRole,"Role is not existed");
-                sysRoleUserService.changeRoleUsers(sysLog.getTargetId(),JsonMapper.string2Obj(sysLog.getOldValue(), new TypeReference<List<Integer>>() {
+                sysRoleUserService.recoverRoleUsers(sysLog.getTargetId(),JsonMapper.string2Obj(sysLog.getOldValue(), new TypeReference<List<String>>() {
                 }));
                 break;
                 default:;

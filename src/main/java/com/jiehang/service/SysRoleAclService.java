@@ -4,8 +4,10 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.jiehang.beans.LogType;
 import com.jiehang.common.RequestHolder;
+import com.jiehang.dao.SysAclMapper;
 import com.jiehang.dao.SysLogMapper;
 import com.jiehang.dao.SysRoleAclMapper;
+import com.jiehang.model.SysAcl;
 import com.jiehang.model.SysLogWithBLOBs;
 import com.jiehang.model.SysRoleAcl;
 import com.jiehang.util.IpUtil;
@@ -34,6 +36,9 @@ public class SysRoleAclService {
     @Resource
     private SysLogMapper sysLogMapper;
 
+    @Resource
+    private SysAclMapper sysAclMapper;
+
     /**
      * change role and als
      * first to judge selected permission and allocated permission
@@ -55,6 +60,25 @@ public class SysRoleAclService {
         saveRoleAclLog(roleId,originAclIdList,aclIdList);
     }
 
+    /**
+     * recover role and user operation
+     * @param roleId
+     * @param aclNameList
+     */
+    public void recoverRoleAcls(Integer roleId,List<String> aclNameList) {
+        List<Integer> originAclIdList = sysRoleAclMapper.getAclIdListByRoleIdList(Lists.newArrayList(roleId));
+        List<Integer> aclIdList = sysAclMapper.getIdListByNameList(aclNameList);
+        if (originAclIdList.size() == aclIdList.size()) {
+            Set<Integer> originAclIdSet = Sets.newHashSet(originAclIdList);
+            Set<Integer> aclIdSet = Sets.newHashSet(aclIdList);
+            originAclIdSet.removeAll(aclIdSet);
+            if (CollectionUtils.isEmpty(originAclIdSet)) {
+                return;
+            }
+        }
+        updateRoleAcls(roleId, aclIdList);
+        saveRoleAclLog(roleId,originAclIdList,aclIdList);
+    }
     /**
      * update role and acl
      * first remove allocated permission
@@ -93,8 +117,10 @@ public class SysRoleAclService {
         SysLogWithBLOBs sysLog = new SysLogWithBLOBs();
         sysLog.setType(LogType.TYPE_ROLE_ACL);
         sysLog.setTargetId(roleId);
-        sysLog.setOldValue(before == null ? "" : JsonMapper.obj2String(before));
-        sysLog.setNewValue(after == null ? "" :JsonMapper.obj2String(after));
+        List<String> beforeList = sysAclMapper.getNameByIdList(before);
+        List<String> afterList = sysAclMapper.getNameByIdList(after);
+        sysLog.setOldValue(before == null ? "" : JsonMapper.obj2String(beforeList));
+        sysLog.setNewValue(after == null ? "" :JsonMapper.obj2String(afterList));
         sysLog.setOperator(RequestHolder.getCurrentHolder().getUsername());
         sysLog.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
         sysLog.setOperateTime(new Date());

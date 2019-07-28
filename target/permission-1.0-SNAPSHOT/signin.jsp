@@ -37,10 +37,7 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
-
 <body>
-
-<div class="container">
     <form class="form-signin" action="/login.page?ret=<%=ret%>" method="post">
         <h2 class="form-signin-heading">Please Sign in</h2>
         <label for="inputEmail" class="sr-only">email/telephone</label>

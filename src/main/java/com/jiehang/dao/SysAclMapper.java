@@ -30,4 +30,10 @@ public interface SysAclMapper {
     List<SysAcl> getByIdList(@Param("idList") List<Integer> idList);
 
     List<SysAcl> getByUrl(@Param("url") String url);
+
+    List<String> getNameByIdList(@Param("idList") List<Integer> idList);
+
+    List<Integer> getIdListByNameList(@Param("nameList") List<String> nameList);
+
+
 }

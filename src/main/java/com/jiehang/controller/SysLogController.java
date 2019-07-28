@@ -41,5 +41,4 @@ public class SysLogController {
         sysLogService.recover(id);
         return JsonData.success();
     }
-
 }

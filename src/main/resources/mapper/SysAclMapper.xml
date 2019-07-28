@@ -15,6 +15,12 @@
     <result column="operate_time" property="operateTime" jdbcType="TIMESTAMP" />
     <result column="operate_ip" property="operateIp" jdbcType="VARCHAR" />
   </resultMap>
+  <resultMap id="NameMap" type="String">
+    <result column="name" property="name" jdbcType="VARCHAR"/>
+  </resultMap>
+  <resultMap id="IdMap" type="Integer">
+    <id column="id" property="id" jdbcType="INTEGER" />
+  </resultMap>
   <sql id="Base_Column_List" >
     id, code, name, acl_module_id, url, type, status, seq, remark, operator, operate_time, 
     operate_ip
@@ -215,5 +221,21 @@
     from sys_acl
     where url = #{url}
     <!-- url is not null and url != '' #{url} REGEXP url-->
+  </select>
+  <select id="getNameByIdList" parameterType="map" resultMap="NameMap">
+    select name
+    from sys_acl
+    where id in
+    <foreach collection="idList" item="id" open="(" close=")" separator=",">
+      #{id}
+    </foreach>
+  </select>
+  <select id="getIdListByNameList" parameterType="map" resultMap="IdMap">
+    select id
+    from sys_acl
+    where name in
+    <foreach collection="nameList" item="name" open="(" close=")" separator=",">
+      #{name}
+    </foreach>
   </select>
 </mapper>

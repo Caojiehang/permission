@@ -63,9 +63,9 @@ public class SysUserCalendarController {
     @ResponseBody
     public JsonData show() {
         //from cache
-        List<EventDto> list = sysUserCalendarService.getEventListFromCache();
+        //List<EventDto> list = sysUserCalendarService.getEventListFromCache();
         //from database
-        //List<EventDto> list = sysUserCalendarService.getEventListByUserId();
+        List<EventDto> list = sysUserCalendarService.getEventListByUserId();
         return JsonData.success(list);
     }
 }
