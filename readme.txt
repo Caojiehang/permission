@@ -34,3 +34,5 @@ Complete event management back end service: add,update,delete events
 Store event data to cache: firstly load database info and store in cache, if nothing was changed, next time diretly obtain value from cache, or continue to obtain data from database.
 the cache life cycle is 6 minutes.
 Update log display for operation of role and user, role and permissions(before：show id list,now: show actual username and permission name)
+Update displaying user permission data and related role in dialog
+Update displaying related roles and users for certain permission point in dialog
