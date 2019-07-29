@@ -7,42 +7,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa7f2cd3-07d3-47d3-807f-7a95eb320743" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/beans/DateTesting.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserCalendarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserCalendarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/dao/SysAclMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/dao/SysAclMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/dao/SysUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/dao/SysUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysLogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleAclService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleAclService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysRoleUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysAclMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysAclMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/signin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/signin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/beans/DateTesting.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/controller/SysUserCalendarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/controller/SysUserCalendarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/dao/SysAclMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/dao/SysAclMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/dao/SysUserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/dao/SysUserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysLogService$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysLogService$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysLogService$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysLogService$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysLogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysLogService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysAclController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysAclController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysAclService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysAclService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/acl.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/acl.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dept.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dept.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/controller/SysAclController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/controller/SysAclController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/controller/SysUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/controller/SysUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysAclService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysAclService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysRoleAclService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysRoleAclService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysRoleUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysRoleUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SysAclMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/SysAclMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SysUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/SysUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/controller/SysUserCalendarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/controller/SysUserCalendarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/dao/SysAclMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/dao/SysAclMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/dao/SysUserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/dao/SysUserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysLogService$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysLogService$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysLogService$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysLogService$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysLogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysLogService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/controller/SysAclController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/controller/SysAclController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/controller/SysUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/controller/SysUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysAclService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysAclService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysRoleAclService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysRoleAclService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysRoleUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysRoleUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/mapper/SysAclMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/mapper/SysAclMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/mapper/SysUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/mapper/SysUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/signin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/signin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/views/acl.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/views/acl.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/views/dept.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/views/dept.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -408,6 +390,9 @@
       <workItem from="1564320011597" duration="297000" />
       <workItem from="1564321197027" duration="93000" />
       <workItem from="1564323369608" duration="4440000" />
+      <workItem from="1564328628249" duration="11000" />
+      <workItem from="1564328738630" duration="311000" />
+      <workItem from="1564382996107" duration="5906000" />
     </task>
     <servers />
   </component>

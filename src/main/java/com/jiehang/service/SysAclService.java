@@ -103,6 +103,12 @@ public class SysAclService {
         return dateFormat.format(new Date()) + "_"+(int)(Math.random()*100);
     }
 
+
+    public SysAcl getAclById(int aclId) {
+        SysAcl sysAcl = sysAclMapper.selectByPrimaryKey(aclId);
+        return sysAcl == null ? new SysAcl() : sysAcl;
+    }
+
     /**
      * Page display
      * @param aclModuleId

@@ -97,7 +97,7 @@
         </div>
     </div>
 </div>
-<div id="dialog-dept-form" style="display: none;" >
+<div id="dialog-dept-form" style="display: none;">
     <form id="deptForm">
         <table class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
             <tr>
@@ -118,6 +118,30 @@
             <tr>
                 <td><label for="deptRemark">Comment</label></td>
                 <td><textarea name="remark" id="deptRemark" class="text ui-widget-content ui-corner-all" rows="3" cols="25"></textarea></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div id="user-info-dialog" style="display: none;">
+    <form id="info-form">
+        <table class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
+            <tr>
+                <td><label id="name-label">UserName:</label></td>
+                <td><a id="clickUserName"></a></td>
+            </tr>
+            <tr>
+                <td><label id="role-name-label">Allocated Roles:</label></td>
+                <td>
+                    <ul id="roleList">
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><label id="Acls-name-label">Allocated Permissions:</label></td>
+                <td>
+                    <ul id="aclList">
+                    </ul>
+                </td>
             </tr>
         </table>
     </form>
@@ -277,7 +301,6 @@
             $(".dept-edit").click(function (e) {
                 e.preventDefault();
                         e.stopPropagation();
-
                         var deptId = $(this).attr("data-id");
                         // handleDeptSelected(deptId);
                         $("#dialog-dept-form").dialog({
@@ -445,8 +468,38 @@
                     type: 'POST',
                     success: function (result) {
                         if(result.ret) {
-                            console.log(result);
-                            //todo: add dialog display
+                            var aclList = result.data.acls;
+                            var roleList = result.data.roles;
+                            var userName = result.data.username;
+                            if((aclList && aclList.length > 0) ||(roleList && roleList.length > 0)) {
+                                $("#user-info-dialog").dialog({
+                                    modal: true,
+                                    title: "User info",
+                                    open: function (event, ui) {
+                                        $(".ui-dialog-titlebar-close", $(this).parent()).hide();
+                                        var user = document.getElementById("clickUserName");
+                                        user.innerText = userName;
+                                        $(roleList).each(function (i, role) {
+                                            var roleuL = document.getElementById("roleList");
+                                            var li = document.createElement('li');
+                                            li.innerText = role.name;
+                                            roleuL.appendChild(li);
+                                        });
+                                        $(aclList).each(function (i, acl) {
+                                            var acluL = document.getElementById("aclList");
+                                            var li = document.createElement('li');
+                                            li.innerText = acl.name;
+                                            acluL.appendChild(li);
+                                        });
+                                    },
+                                    buttons: {
+                                        "cancel": function () {
+                                            $("#user-info-dialog").dialog("close");
+                                        }
+                                    }
+                                });
+                               // console.log(result);
+                            }
                         } else {
                             showMessage("Obtain user permission data",result.msg,false);
                         }

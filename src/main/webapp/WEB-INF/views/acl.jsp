@@ -127,6 +127,30 @@
         </table>
     </form>
 </div>
+<div id="acl-info-dialog" style="display: none;">
+    <form id="info-form">
+        <table class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
+            <tr>
+                <td><label id="name-label">Permission point:</label></td>
+                <td><a id="clickPoint"></a></td>
+            </tr>
+            <tr>
+                <td><label id="roles-name-label">Allocated Roles:</label></td>
+                <td>
+                    <ul id="roles">
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><label id="users-name-label">Allocated Users:</label></td>
+                <td>
+                    <ul id="users">
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
 <div id="dialog-acl-form" style="display: none;">
     <form id="aclForm">
         <table class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
@@ -528,6 +552,37 @@
                     type: 'POST',
                     success: function (result) {
                         if(result.ret) {
+                            var userList = result.data.users;
+                            var roleList = result.data.roles;
+                            var permission = result.data.permission;
+                            if((userList && userList.length > 0) ||(roleList && roleList.length > 0)) {
+                                $("#acl-info-dialog").dialog({
+                                    modal: true,
+                                    title: "Permission info",
+                                    open: function (event, ui) {
+                                        $(".ui-dialog-titlebar-close", $(this).parent()).hide();
+                                        var acl = document.getElementById("clickPoint");
+                                        acl.innerText = permission;
+                                        $(roleList).each(function (i, role) {
+                                            var roleuL = document.getElementById("roles");
+                                            var li = document.createElement('li');
+                                            li.innerText = role.name;
+                                            roleuL.appendChild(li);
+                                        });
+                                        $(userList).each(function (i, user) {
+                                            var acluL = document.getElementById("users");
+                                            var li = document.createElement('li');
+                                            li.innerText = user.username;
+                                            acluL.appendChild(li);
+                                        });
+                                    },
+                                    buttons: {
+                                        "cancel": function () {
+                                            $("#acl-info-dialog").dialog("close");
+                                        }
+                                    }
+                                });
+                            }
                             console.log(result);
                             //todo: add dialog display
                         } else {

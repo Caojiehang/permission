@@ -56,6 +56,7 @@ public class SysAclController {
     public JsonData acls(@RequestParam("aclId") int aclId) {
         Map<String,Object> map = Maps.newHashMap();
         List<SysRole> roleList = sysRoleService.getRoleListByAclId(aclId);
+        map.put("permission",sysAclService.getAclById(aclId).getName());
         map.put("roles",roleList);
         map.put("users",sysRoleService.getUserListByRoleList(roleList));
         return JsonData.success(map);
