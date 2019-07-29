@@ -1,16 +1,20 @@
 package com.jiehang.controller;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.jiehang.beans.PageQuery;
 import com.jiehang.beans.PageResult;
 import com.jiehang.common.JsonData;
 import com.jiehang.common.RequestHolder;
+import com.jiehang.dto.AclModuleLevelDto;
+import com.jiehang.model.SysAcl;
 import com.jiehang.model.SysUser;
 import com.jiehang.param.UserParam;
 import com.jiehang.service.SysRoleService;
 import com.jiehang.service.SysTreeService;
 import com.jiehang.service.SysUserService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +23,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -78,8 +84,17 @@ public class SysUserController {
     @ResponseBody
     public JsonData acls(@RequestParam("userId") int userId) {
         Map<String,Object> map = Maps.newHashMap();
+        List<AclModuleLevelDto> aclModuleLevelDtoList = sysTreeService.userAclTree(userId);
+        List<SysAcl> aclList = Lists.newArrayList();
+        for(AclModuleLevelDto dto: aclModuleLevelDtoList) {
+            if(CollectionUtils.isNotEmpty(dto.getAclList())) {
+                for(SysAcl acl:dto.getAclList()) {
+                    aclList.add(acl);
+                }
+            }
+        }
         map.put("username",sysUserService.getUserInfo(userId).getUsername());
-        map.put("acls",sysTreeService.userAclTree(userId));
+        map.put("acls",aclList);
         map.put("roles",sysRoleService.getRoleListByUserId(userId));
         return JsonData.success(map);
     }

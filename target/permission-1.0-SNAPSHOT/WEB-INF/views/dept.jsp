@@ -477,6 +477,7 @@
                                     title: "User info",
                                     open: function (event, ui) {
                                         $(".ui-dialog-titlebar-close", $(this).parent()).hide();
+                                        $("#info-form")[0].reset();
                                         var user = document.getElementById("clickUserName");
                                         user.innerText = userName;
                                         $(roleList).each(function (i, role) {
@@ -495,6 +496,8 @@
                                     buttons: {
                                         "cancel": function () {
                                             $("#user-info-dialog").dialog("close");
+                                            removeAllChild("roleList");
+                                            removeAllChild("aclList");
                                         }
                                     }
                                 });
@@ -506,6 +509,12 @@
                     }
                 })
             });
+            function removeAllChild(id) {
+              var ul = document.getElementById(id);
+              while(ul.hasChildNodes()) {
+                  ul.removeChild(ul.firstChild);
+              }
+            }
             $(".user-edit").click(function (e) {
                 e.preventDefault();
                 e.stopPropagation();

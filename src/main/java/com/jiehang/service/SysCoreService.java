@@ -6,6 +6,7 @@ import com.jiehang.common.RequestHolder;
 import com.jiehang.dao.SysAclMapper;
 import com.jiehang.dao.SysRoleAclMapper;
 import com.jiehang.dao.SysRoleUserMapper;
+import com.jiehang.dao.SysUserMapper;
 import com.jiehang.model.SysAcl;
 import com.jiehang.model.SysUser;
 import com.jiehang.util.JsonMapper;
@@ -36,6 +37,8 @@ public class SysCoreService {
     private SysRoleAclMapper sysRoleAclMapper;
     @Resource
     private SysCacheService sysCacheService;
+    @Resource
+    private SysUserMapper sysUserMapper;
 
     /**
      * get current user permission list
@@ -65,7 +68,8 @@ public class SysCoreService {
      * @return
      */
     public List<SysAcl> getUserAclList(int userId) {
-        if(isSupperAdmin()) {
+        SysUser sysUser = sysUserMapper.selectByPrimaryKey(userId);
+        if(isSupperAdmin() && sysUser.getUsername().equals("Admin")) {
             return sysAclMapper.getAll();
         }
         List<Integer> userRoleIdList = sysRoleUserMapper.getRoleIdListByUserId(userId);

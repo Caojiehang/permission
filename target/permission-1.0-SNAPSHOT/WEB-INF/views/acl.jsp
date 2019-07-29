@@ -579,6 +579,8 @@
                                     buttons: {
                                         "cancel": function () {
                                             $("#acl-info-dialog").dialog("close");
+                                            removeAllChild("users");
+                                            removeAllChild("roles");
                                         }
                                     }
                                 });
@@ -591,6 +593,12 @@
                     }
                 })
             });
+            function removeAllChild(id) {
+                var ul = document.getElementById(id);
+                while(ul.hasChildNodes()) {
+                    ul.removeChild(ul.firstChild);
+                }
+            }
             $(".acl-edit").click(function (e) {
                 e.preventDefault();
                 e.stopPropagation();

@@ -20,6 +20,13 @@
     <link rel="icon" href="/favicon.ico">
 
     <title>Sign in</title>
+    <style>
+     body {
+         background-image: url("image/bg.jpg");
+         background-repeat: no-repeat;
+         background-size: cover;
+     }
+    </style>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -37,7 +44,7 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body style="width: 100%;height: 100%">
     <form class="form-signin" action="/login.page?ret=<%=ret%>" method="post">
         <h2 class="form-signin-heading">Please Sign in</h2>
         <label for="inputEmail" class="sr-only">email/telephone</label>
