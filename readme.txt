@@ -36,3 +36,5 @@ the cache life cycle is 6 minutes.
 Update log display for operation of role and user, role and permissions(before：show id list,now: show actual username and permission name)
 Update displaying user permission data and related role in dialog
 Update displaying related roles and users for certain permission point in dialog
+Add button catogory permission control(delete,edit,add button)
+Add delete function for user and role
