@@ -8,6 +8,7 @@ import com.jiehang.dao.SysRoleMapper;
 import com.jiehang.dao.SysRoleUserMapper;
 import com.jiehang.dao.SysUserMapper;
 import com.jiehang.exception.ParamException;
+import com.jiehang.model.SysAcl;
 import com.jiehang.model.SysRole;
 import com.jiehang.model.SysUser;
 import com.jiehang.param.RoleParam;
@@ -86,6 +87,22 @@ public class SysRoleService {
         after.setOperateTime(new Date());
         sysRoleMapper.updateByPrimaryKeySelective(after);
         sysLogService.saveRoleLog(before,after);
+    }
+
+    /**
+     * delete role
+     * @param roleId
+     */
+    public void delete(int roleId) {
+        SysRole sysRole = sysRoleMapper.selectByPrimaryKey(roleId);
+        Preconditions.checkNotNull(sysRole,"Role is not existed");
+        if(sysRoleAclMapper.countByRoleId(roleId) > 0) {
+            throw new ParamException("Acls are allocated now for this role, delete failed");
+        }
+        if(sysRoleUserMapper.countByRoleId(roleId) >0) {
+            throw new ParamException("Users are allocated now for this role, delete failed");
+        }
+        sysRoleMapper.deleteByPrimaryKey(roleId);
     }
 
     /**

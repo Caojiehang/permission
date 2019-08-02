@@ -129,4 +129,9 @@
     from sys_role_acl
     where acl_id = #{aclId}
   </select>
+  <select id="countByRoleId" parameterType="int" resultType="int">
+    select count(1)
+    from sys_role_acl
+    where role_id = #{roleId}
+  </select>
 </mapper>

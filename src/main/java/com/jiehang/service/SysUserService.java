@@ -208,6 +208,16 @@ public class SysUserService {
         }
     }
 
+    /**
+     * delete method
+     * @param userId
+     */
+    public void delete(int userId) {
+        SysUser sysUser = sysUserMapper.selectByPrimaryKey(userId);
+        Preconditions.checkNotNull(sysUser);
+        sysUserMapper.deleteByPrimaryKey(userId);
+    }
+
     public SysUser getUserInfo(int id) {
         SysUser sysUser = sysUserMapper.selectByPrimaryKey(id);
         return sysUser;

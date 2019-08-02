@@ -70,7 +70,7 @@ public class SysTreeService {
      * @return
      */
     public List<AclModuleLevelDto> roleTree(int roleId) {
-        // user allocated permission
+        // current user allocated permission
         List<SysAcl> userAclList = sysCoreService.getCurrentUserAclList();
         // role allocated permission
         List<SysAcl> roleAclList = sysCoreService.getRoleAclList(roleId);

@@ -126,4 +126,11 @@ public class SysUserController {
         map.put("telephone",sysUser.getTelephone());
         return JsonData.success(map);
     }
+
+    @RequestMapping("/delete.json")
+    @ResponseBody
+    public JsonData delete(@RequestParam("userId") int userId) {
+        sysUserService.delete(userId);
+        return JsonData.success();
+    }
 }

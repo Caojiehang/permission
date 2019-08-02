@@ -69,7 +69,7 @@ public class SysCoreService {
      */
     public List<SysAcl> getUserAclList(int userId) {
         SysUser sysUser = sysUserMapper.selectByPrimaryKey(userId);
-        if(isSupperAdmin() && sysUser.getUsername().equals("Admin")) {
+        if(sysUser.getUsername().equals("Admin")) {
             return sysAclMapper.getAll();
         }
         List<Integer> userRoleIdList = sysRoleUserMapper.getRoleIdListByUserId(userId);

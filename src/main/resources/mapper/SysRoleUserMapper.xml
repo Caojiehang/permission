@@ -136,4 +136,9 @@
       #{roleId}
     </foreach>
   </select>
+  <select id="countByRoleId" parameterType="int" resultType="int">
+    select count(1)
+    from sys_role_user
+    where role_id = #{roleId}
+  </select>
 </mapper>

@@ -121,8 +121,14 @@ public class SysRoleUserService {
         SysLogWithBLOBs sysLog = new SysLogWithBLOBs();
         sysLog.setType(LogType.TYPE_ROLE_USER);
         sysLog.setTargetId(roleId);
-        List<String> beforeList = sysUserMapper.getNameByIdList(before);
-        List<String> afterList = sysUserMapper.getNameByIdList(after);
+        List<String> beforeList = Lists.newArrayList();
+        List<String> afterList = Lists.newArrayList();
+        if(CollectionUtils.isNotEmpty(before)) {
+            beforeList = sysUserMapper.getNameByIdList(before);
+        }
+        if(CollectionUtils.isNotEmpty(after)) {
+            afterList = sysUserMapper.getNameByIdList(after);
+        }
         sysLog.setOldValue(before == null ? "" : JsonMapper.obj2String(beforeList));
         sysLog.setNewValue(after == null ? "" :JsonMapper.obj2String(afterList));
         sysLog.setOperator(RequestHolder.getCurrentHolder().getUsername());

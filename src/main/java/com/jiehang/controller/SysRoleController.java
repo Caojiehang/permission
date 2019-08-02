@@ -88,6 +88,13 @@ public class SysRoleController {
 
     }
 
+    @RequestMapping("/delete.json")
+    @ResponseBody
+    public JsonData delete(@RequestParam("roleId") int roleId) {
+        sysRoleService.delete(roleId);
+        return JsonData.success();
+    }
+
     @RequestMapping("/users.json")
     @ResponseBody
     public JsonData users(@RequestParam("roleId") int roleId) {
@@ -109,5 +116,6 @@ public class SysRoleController {
         map.put("unselected",unselectedUserList);
         return JsonData.success(map);
     }
+
 
 }

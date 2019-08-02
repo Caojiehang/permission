@@ -148,6 +148,7 @@ public class SysAclModuleService {
             throw new ParamException("The module has permissions, delete failed");
         }
         sysAclModuleMapper.deleteByPrimaryKey(aclModuleId);
+        sysLogService.saveAclModuleLog(sysAclModule,null);
     }
 
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="acl" uri="checkButton" %>
 <%--
   Created by IntelliJ IDEA.
   User: jiehangcao
@@ -40,7 +41,9 @@
         <div class="table-header">
             Role list&nbsp;&nbsp;
             <a class="green" href="#">
+                <acl:checkPermission code="20190802195540_35">
                 <i class="ace-icon fa fa-plus-circle orange bigger-130 role-add"></i>
+                </acl:checkPermission>
             </a>
         </div>
         <div id="roleList"></div>
@@ -118,12 +121,16 @@
             <div class="dd2-content" style="cursor:pointer;">
             {{name}}
             <span style="float:right;">
+            <acl:checkPermission code="20190802195505_28">
                 <a class="green role-edit" href="#" data-id="{{id}}" >
                     <i class="ace-icon fa fa-pencil bigger-100"></i>
                 </a>
+            </acl:checkPermission>
                 &nbsp;
+                <acl:checkPermission code="20190802194525_55">
                 <a class="red role-delete" href="#" data-id="{{id}}" data-name="{{name}}">
                     <i class="ace-icon fa fa-trash-o bigger-100"></i>
+                 </acl:checkPermission>
                 </a>
             </span>
             </div>
@@ -248,6 +255,28 @@
                     }
                 })
             });
+            $(".role-delete").click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var roleId = $(this).attr("data-id");
+                var roleName = $(this).attr("data-name");
+                if (confirm("Confirm to delete[" + roleName + "]?")) {
+                    $.ajax({
+                        url: "/sys/role/delete.json",
+                        data: {
+                            roleId: roleId
+                        },
+                        success: function (result) {
+                            if (result.ret) {
+                                showMessage("Delete [" + roleName + "]", "Successfully", true);
+                                loadRoleList();
+                            } else {
+                                showMessage("Delete[" + roleName + "]", result.msg, false);
+                            }
+                        }
+                    });
+                }
+            });
             $(".role-name").click(function (e) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -271,6 +300,7 @@
                 loadRoleAcl(roleId);
             }
         }
+
 
         function loadRoleAcl(selectedRoleId) {
             //ztree
@@ -361,7 +391,6 @@
             }
         }
         $(".role-add").click(function () {
-
             $("#dialog-role-form").dialog({
                 modal: true,
                 title: "add new role",
@@ -383,7 +412,6 @@
                     }
                 }
             })
-
         });
         $(".saveRoleAcl").click(function (e) {
             e.preventDefault();

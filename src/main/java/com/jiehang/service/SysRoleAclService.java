@@ -117,8 +117,14 @@ public class SysRoleAclService {
         SysLogWithBLOBs sysLog = new SysLogWithBLOBs();
         sysLog.setType(LogType.TYPE_ROLE_ACL);
         sysLog.setTargetId(roleId);
-        List<String> beforeList = sysAclMapper.getNameByIdList(before);
-        List<String> afterList = sysAclMapper.getNameByIdList(after);
+        List<String> beforeList = Lists.newArrayList();
+        List<String> afterList = Lists.newArrayList();
+        if(CollectionUtils.isNotEmpty(before)) {
+            beforeList = sysAclMapper.getNameByIdList(before);
+        }
+        if(CollectionUtils.isNotEmpty(after)) {
+            afterList = sysAclMapper.getNameByIdList(after);
+        }
         sysLog.setOldValue(before == null ? "" : JsonMapper.obj2String(beforeList));
         sysLog.setNewValue(after == null ? "" :JsonMapper.obj2String(afterList));
         sysLog.setOperator(RequestHolder.getCurrentHolder().getUsername());

@@ -1,3 +1,4 @@
+<%@ taglib prefix="acl" uri="checkButton" %>
 <%--
   Created by IntelliJ IDEA.
   User: jiehangcao
@@ -28,7 +29,9 @@
         <div class="table-header">
             Department List&nbsp;&nbsp;
             <a class="green" href="#">
+                <acl:checkPermission code="20190731235559_16">
                 <i class="ace-icon fa fa-plus-circle orange bigger-130 dept-add"></i>
+                </acl:checkPermission>
             </a>
         </div>
         <div id="deptList">
@@ -39,7 +42,9 @@
             <div class="table-header">
                 User List&nbsp;&nbsp;
                 <a class="green" href="#">
+                    <acl:checkPermission code="20190802180409_49">
                     <i class="ace-icon fa fa-plus-circle orange bigger-130 user-add"></i>
+                    </acl:checkPermission>
                 </a>
             </div>
             <div>
@@ -192,13 +197,17 @@
             <div class="dd2-content" style="cursor:pointer;">
             {{name}}
             <span style="float:right;">
+            <acl:checkPermission code="20190802195207_39">
                 <a class="green dept-edit" href="#" data-id="{{id}}" >
                     <i class="ace-icon fa fa-pencil bigger-100"></i>
                 </a>
+</acl:checkPermission>
                 &nbsp;
+                <acl:checkPermission code="20190802194348_48">
                 <a class="red dept-delete" href="#" data-id="{{id}}" data-name="{{name}}">
                     <i class="ace-icon fa fa-trash-o bigger-100"></i>
                 </a>
+</acl:checkPermission>
             </span>
             </div>
         </li>
@@ -215,12 +224,19 @@
     <td>{{#bold}}{{showStatus}}{{/bold}}</td> <!-- 此处套用函数对status做特殊处理 -->
     <td>
         <div class="hidden-sm hidden-xs action-buttons">
+        <acl:checkPermission code="20190802195428_68">
             <a class="green user-edit" href="#" data-id="{{id}}">
                 <i class="ace-icon fa fa-pencil bigger-100"></i>
             </a>
+</acl:checkPermission>
             <a class="red user-acl" href="#" data-id="{{id}}">
                 <i class="ace-icon fa fa-flag bigger-100"></i>
             </a>
+            <acl:checkPermission code="20190802194433_50">
+            <a class="red user-delete" href="#" data-id="{{id}}" data-name="{{name}}">
+                    <i class="ace-icon fa fa-trash-o bigger-100"></i>
+                </a>
+</acl:checkPermission>
         </div>
     </td>
 </tr>
@@ -456,6 +472,28 @@
             });
         });
         function bindUserClick() {
+            $(".user-delete").click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var userId = $(this).attr("data-id");
+                var userName = $(this).attr("data-name");
+                if (confirm("Confirm to delete[" + userName + "]?")) {
+                    $.ajax({
+                        url: "/sys/users/delete.json",
+                        data: {
+                            userId: userId
+                        },
+                        success: function (result) {
+                            if (result.ret) {
+                                showMessage("Delete [" + userName + "]", "Successfully", true);
+                                loadUserList(lastClickDeptId);
+                            } else {
+                                showMessage("Delete[" + userName + "]", result.msg, false);
+                            }
+                        }
+                    });
+                }
+            });
             $(".user-acl").click(function (e) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -556,6 +594,7 @@
                     }
                 })
             })
+
         }
         $(".dept-add").click(function () {
             $("#dialog-dept-form").dialog({
