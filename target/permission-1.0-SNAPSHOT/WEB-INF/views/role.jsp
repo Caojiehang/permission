@@ -92,14 +92,14 @@
     <form id="roleForm">
         <table class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
             <tr>
-                <td><label for="roleName">name</label></td>
+                <td><label for="roleName">Name</label><label style="color: #be0000">*</label></td>
                 <td>
                     <input type="text" name="name" id="roleName" value="" class="text ui-widget-content ui-corner-all">
                     <input type="hidden" name="id" id="roleId"/>
                 </td>
             </tr>
             <tr>
-                <td><label for="roleStatus">status</label></td>
+                <td><label for="roleStatus">Status</label><label style="color: #be0000">*</label></td>
                 <td>
                     <select id="roleStatus" name="status" data-placeholder="status" style="width: 150px;">
                         <option value="1">available</option>
@@ -107,7 +107,7 @@
                     </select>
                 </td>
             </tr>
-            <td><label for="roleRemark">comment</label></td>
+            <td><label for="roleRemark">Comment</label></td>
             <td><textarea name="remark" id="roleRemark" class="text ui-widget-content ui-corner-all" rows="3"
                           cols="25"></textarea></td>
             </tr>

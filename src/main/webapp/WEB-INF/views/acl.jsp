@@ -96,22 +96,22 @@
     <form id="aclModuleForm">
         <table class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
             <tr>
-                <td style="width: 80px;"><label for="parentId">up-level module</label></td>
+                <td style="width: 80px;"><label for="parentId">Permission Category</label><label style="color: #be0000">*</label></td>
                 <td>
                     <select id="parentId" name="parentId" data-placeholder="selcet module" style="width: 200px;"></select>
                     <input type="hidden" name="id" id="aclModuleId"/>
                 </td>
             </tr>
             <tr>
-                <td><label for="aclModuleName">name</label></td>
+                <td><label for="aclModuleName">Name</label><label style="color: #be0000">*</label></td>
                 <td><input type="text" name="name" id="aclModuleName" value="" class="text ui-widget-content ui-corner-all"></td>
             </tr>
             <tr>
-                <td><label for="aclModuleSeq">sequence</label></td>
+                <td><label for="aclModuleSeq">Sequence</label><label style="color: #be0000">*</label></td>
                 <td><input type="text" name="seq" id="aclModuleSeq" value="1" class="text ui-widget-content ui-corner-all"></td>
             </tr>
             <tr>
-                <td><label for="aclModuleStatus">status</label></td>
+                <td><label for="aclModuleStatus">Status</label><label style="color: #be0000">*</label></td>
                 <td>
                     <select id="aclModuleStatus" name="status" data-placeholder="select status" style="width: 150px;">
                         <option value="1">valid</option>
@@ -121,7 +121,7 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="aclModuleRemark">comment</label></td>
+                <td><label for="aclModuleRemark">Comment</label></td>
                 <td><textarea name="remark" id="aclModuleRemark" class="text ui-widget-content ui-corner-all" rows="3" cols="25"></textarea></td>
             </tr>
         </table>
@@ -155,18 +155,18 @@
     <form id="aclForm">
         <table class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
             <tr>
-                <td style="width: 80px;"><label for="parentId">Permission module</label></td>
+                <td style="width: 80px;"><label for="parentId">Permission Category</label><label style="color: #be0000">*</label></td>
                 <td>
                     <select id="aclModuleSelectId" name="aclModuleId" data-placeholder="select permission module" style="width: 200px;"></select>
                 </td>
             </tr>
             <tr>
-                <td><label for="aclName">name</label></td>
+                <td><label for="aclName">Name</label><label style="color: #be0000">*</label></td>
                 <input type="hidden" name="id" id="aclId"/>
                 <td><input type="text" name="name" id="aclName" value="" class="text ui-widget-content ui-corner-all"></td>
             </tr>
             <tr>
-                <td><label for="aclType">type</label></td>
+                <td><label for="aclType">Type</label><label style="color: #be0000">*</label></td>
                 <td>
                     <select id="aclType" name="type" data-placeholder="type" style="width: 150px;">
                         <option value="1">menu</option>
@@ -176,11 +176,11 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="aclUrl">URL</label></td>
+                <td><label for="aclUrl">URL</label><label style="color: #be0000">*</label></td>
                 <td><input type="text" name="url" id="aclUrl" value="1" class="text ui-widget-content ui-corner-all"></td>
             </tr>
             <tr>
-                <td><label for="aclStatus">status</label></td>
+                <td><label for="aclStatus">Status</label><label style="color: #be0000">*</label></td>
                 <td>
                     <select id="aclStatus" name="status" data-placeholder="select status" style="width: 150px;">
                         <option value="1">valid</option>
@@ -189,11 +189,11 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="aclSeq">sequence</label></td>
+                <td><label for="aclSeq">Sequence</label><label style="color: #be0000">*</label></td>
                 <td><input type="text" name="seq" id="aclSeq" value="" class="text ui-widget-content ui-corner-all"></td>
             </tr>
             <tr>
-                <td><label for="aclRemark">comment</label></td>
+                <td><label for="aclRemark">Comment</label></td>
                 <td><textarea name="remark" id="aclRemark" class="text ui-widget-content ui-corner-all" rows="3" cols="25"></textarea></td>
             </tr>
         </table>
