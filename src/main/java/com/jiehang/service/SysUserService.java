@@ -5,6 +5,7 @@ import com.jiehang.beans.Mail;
 import com.jiehang.beans.PageQuery;
 import com.jiehang.beans.PageResult;
 import com.jiehang.common.RequestHolder;
+import com.jiehang.dao.SysRoleUserMapper;
 import com.jiehang.dao.SysUserMapper;
 import com.jiehang.exception.ParamException;
 import com.jiehang.model.SysUser;
@@ -32,6 +33,8 @@ public class SysUserService {
     private SysUserMapper sysUserMapper;
     @Resource
     private SysLogService sysLogService;
+    @Resource
+    private SysRoleUserMapper sysRoleUserMapper;
 
     /**
      * add new user
@@ -215,6 +218,9 @@ public class SysUserService {
     public void delete(int userId) {
         SysUser sysUser = sysUserMapper.selectByPrimaryKey(userId);
         Preconditions.checkNotNull(sysUser);
+        if(sysRoleUserMapper.countByUserId(userId) > 0) {
+            throw new ParamException("The selected user has been allocated role, delete failed");
+        }
         sysUserMapper.deleteByPrimaryKey(userId);
     }
 

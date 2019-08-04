@@ -18,6 +18,8 @@ public interface SysRoleUserMapper {
 
     int updateByPrimaryKey(SysRoleUser record);
     int countByRoleId(@Param("roleId") int roleId);
+
+    int countByUserId(@Param("userId") int userId);
     List<Integer> getRoleIdListByUserId(@Param("userId") int userId);
 
     List<Integer> getUserIdListByRoleId(@Param("roleId") int roleId);
