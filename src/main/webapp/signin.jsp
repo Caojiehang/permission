@@ -45,8 +45,9 @@
     <![endif]-->
 </head>
 <body style="width: 100%;height: 100%">
+<div style="top: 50%;left: 50%;width: 300px; height: 300px; margin: -150px 0 0 -150px;position: absolute" >
     <form class="form-signin" action="/login.page?ret=<%=ret%>" method="post">
-        <h2 class="form-signin-heading">Please Sign in</h2>
+        <h1 style="color: #fff;text-shadow:0 0 10px;letter-spacing: 1px;text-align: center;">Login</h1>
         <label for="inputEmail" class="sr-only">email/telephone</label>
         <input type="text" id="inputEmail" class="form-control" placeholder="Email/Telephone" name="username" required autofocus value="${username}">
         <label for="inputPassword" class="sr-only">password</label>

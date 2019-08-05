@@ -17,20 +17,20 @@
     <div class="dataTables_paginate paging_simple_numbers" id="dynamic-table_paginate">
         <ul class="pagination">
             <li class="paginate_button previous {{^firstUrl}}disabled{{/firstUrl}}" aria-controls="dynamic-table" tabindex="0">
-                <a href="#" data-target="1" data-url="{{firstUrl}}" class="page-action">home</a>
+                <a href="#" data-target="1" data-url="{{firstUrl}}" class="page-action"> << </a>
             </li>
             <li class="paginate_button {{^beforeUrl}}disabled{{/beforeUrl}}" aria-controls="dynamic-table" tabindex="0">
-                <a href="#" data-target="{{beforePageNo}}" data-url="{{beforeUrl}}" class="page-action">forward</a>
+                <a href="#" data-target="{{beforePageNo}}" data-url="{{beforeUrl}}" class="page-action"> < </a>
             </li>
             <li class="paginate_button active" aria-controls="dynamic-table" tabindex="0">
                 <a href="#" data-id="{{pageNo}}" >{{pageNo}}</a>
                 <input type="hidden" class="pageNo" value="{{pageNo}}" />
             </li>
             <li class="paginate_button {{^nextUrl}}disabled{{/nextUrl}}" aria-controls="dynamic-table" tabindex="0">
-                <a href="#" data-target="{{nextPageNo}}" data-url="{{nextUrl}}" class="page-action">backward</a>
+                <a href="#" data-target="{{nextPageNo}}" data-url="{{nextUrl}}" class="page-action"> > </a>
             </li>
             <li class="paginate_button next {{^lastUrl}}disabled{{/lastUrl}}" aria-controls="dynamic-table" tabindex="0">
-                <a href="#" data-target="{{maxPageNo}}" data-url="{{lastUrl}}" class="page-action">end</a>
+                <a href="#" data-target="{{maxPageNo}}" data-url="{{lastUrl}}" class="page-action"> >> </a>
             </li>
         </ul>
     </div>

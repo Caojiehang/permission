@@ -141,4 +141,9 @@
     from sys_role_user
     where role_id = #{roleId}
   </select>
+  <select id="countByUserId" parameterType="int" resultType="int">
+   select count(1)
+   from sys_role_user
+   where user_id = #{userId}
+  </select>
 </mapper>
