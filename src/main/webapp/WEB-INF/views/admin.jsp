@@ -27,8 +27,7 @@
                 <li class="light-blue dropdown-modal">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle" id="drop_down">
 								<span class="user-info">
-									<small>Welcome,</small>
-									Admin
+									<small id="user-name"></small>
 								</span>
                         <i class="ace-icon fa fa-caret-down"></i>
                     </a>
@@ -239,6 +238,9 @@
                     $this.attr("data-value")
             );
         });
+        var username = '<%=session.getAttribute("userName")%>';
+        var user = document.getElementById("user-name");
+        user.innerText = "Welcome "+ username;
         $("#drop_down.dropdown-toggle").dropdown();
     });
 </script>

@@ -47,6 +47,7 @@ public class UserController {
             errorMsg = "user has been frozen, please contact with admin";
         }else {
             request.getSession().setAttribute("user",user);
+            request.getSession().setAttribute("userName",user.getUsername());
             if(StringUtils.isNotBlank(ret)) {
                 response.sendRedirect(ret);
             } else {
