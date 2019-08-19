@@ -55,14 +55,14 @@ public class SysUserController {
     }
     @RequestMapping("/save.json")
     @ResponseBody
-    public JsonData saveDept(UserParam param) {
+    public JsonData saveUser(UserParam param) {
         sysUserService.save(param);
         return JsonData.success();
     }
 
     @RequestMapping("/update.json")
     @ResponseBody
-    public JsonData updateDept(UserParam param) {
+    public JsonData updateUser(UserParam param) {
         sysUserService.update(param);
         return JsonData.success();
     }

@@ -33,20 +33,6 @@
                     </a>
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="#">
-                                <i class="ace-icon fa fa-cog"></i>
-                                Settings
-                            </a>
-                        </li>
-
-                        <li>
-                            <a id="profile_user" href="/sys/users/profile.page">
-                                <i class="ace-icon fa fa-user"></i>
-                                Profile
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
                             <a href="/logout.page">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 Logout
@@ -134,13 +120,6 @@
                 <b class="arrow"></b>
 
                 <ul class="submenu">
-                    <li class="">
-                        <a class="popstyle" href="/config/config.page" target="_blank">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Global configuration management
-                        </a>
-                        <b class="arrow"></b>
-                    </li>
                     <li class="">
                         <a class="popstyle" href="/sys/users/profile.page" target="_blank">
                             <i class="menu-icon fa fa-caret-right"></i>

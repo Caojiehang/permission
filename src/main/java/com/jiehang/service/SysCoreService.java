@@ -111,7 +111,8 @@ public class SysCoreService {
         if(CollectionUtils.isEmpty(aclList)) {
             return true;
         }
-        List<SysAcl> userAclIdList = getCurrentUserAclListFromCache();
+        //List<SysAcl> userAclIdList = getCurrentUserAclListFromCache();
+        List<SysAcl> userAclIdList = getCurrentUserAclList();
         Set<Integer> userAclIdSet = userAclIdList.stream().map(sysAcl -> sysAcl.getId()).collect(Collectors.toSet());
         boolean hasValidAcl = false;
         // regulation : one permission for accessing permission
