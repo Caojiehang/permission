@@ -5,6 +5,7 @@ import com.jiehang.beans.PageQuery;
 import com.jiehang.beans.PageResult;
 import com.jiehang.common.RequestHolder;
 import com.jiehang.dao.SysAclMapper;
+import com.jiehang.dao.SysRoleAclMapper;
 import com.jiehang.exception.ParamException;
 import com.jiehang.model.SysAcl;
 import com.jiehang.param.AclParam;
@@ -29,6 +30,10 @@ public class SysAclService {
     private SysAclMapper sysAclMapper;
     @Resource
     private  SysLogService sysLogService;
+
+    @Resource
+    private SysRoleAclMapper sysRoleAclMapper;
+
 
     /**
      * save permission point
@@ -83,6 +88,19 @@ public class SysAclService {
         sysLogService.saveAclLog(before,after);
     }
 
+
+    /***
+     * Delete method
+     * @param aclId
+     */
+    public void delete(int aclId) {
+        SysAcl sysAcl = sysAclMapper.selectByPrimaryKey(aclId);
+        Preconditions.checkNotNull(sysAcl);
+        if(sysRoleAclMapper.countByAclId(aclId) > 0) {
+            throw new ParamException("The selected permissions has been allocated role, delete failed");
+        }
+        sysAclMapper.deleteByPrimaryKey(aclId);
+    }
     /**
      *  check existed
      * @param aclModuleId

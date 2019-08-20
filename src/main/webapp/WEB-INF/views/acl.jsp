@@ -242,6 +242,9 @@
             <a class="red acl-role" href="#" data-id="{{id}}">
                 <i class="ace-icon fa fa-flag bigger-100"></i>
             </a>
+             <a class="red acl-delete" href="#" data-id="{{id}}" data-name="{{name}}">
+                    <i class="ace-icon fa fa-trash-o bigger-100"></i>
+                </a>
         </div>
     </td>
 </tr>
@@ -540,6 +543,28 @@
             }
         }
         function bindAclClick() {
+            $(".acl-delete").click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var aclId = $(this).attr("data-id");
+                var aclName = $(this).attr("data-name");
+                if (confirm("Confirm to delete[" + aclName + "]?")) {
+                    $.ajax({
+                        url: "/sys/acl/delete.json",
+                        data: {
+                            aclId: aclId
+                        },
+                        success: function (result) {
+                            if (result.ret) {
+                                showMessage("Delete [" + aclName + "]", "Successfully", true);
+                                loadAclList(lastClickAclModuleId);
+                            } else {
+                                showMessage("Delete[" + aclName + "]", result.msg, false);
+                            }
+                        }
+                    });
+                }
+            });
             $(".acl-role").click(function (e) {
                 e.preventDefault();
                 e.stopPropagation();

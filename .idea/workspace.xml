@@ -8,16 +8,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fa7f2cd3-07d3-47d3-807f-7a95eb320743" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysCoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysCoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/controller/SysUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/controller/SysUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysCoreService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysCoreService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysCoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jiehang/service/SysCoreService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/controller/SysUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/controller/SysUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysCoreService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysCoreService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysCoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/classes/com/jiehang/service/SysCoreService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/views/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/permission-1.0-SNAPSHOT/WEB-INF/views/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysAclController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/controller/SysAclController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/dao/SysRoleAclMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/dao/SysRoleAclMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysAclService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiehang/service/SysAclService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysRoleAclMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysRoleAclMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/acl.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/acl.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -407,6 +402,8 @@
       <workItem from="1566123591211" duration="1628000" />
       <workItem from="1566213448533" duration="256000" />
       <workItem from="1566213755472" duration="385000" />
+      <workItem from="1566225416671" duration="3936000" />
+      <workItem from="1566297406717" duration="1522000" />
     </task>
     <servers />
   </component>

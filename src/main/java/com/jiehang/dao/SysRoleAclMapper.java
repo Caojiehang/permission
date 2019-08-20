@@ -25,5 +25,5 @@ public interface SysRoleAclMapper {
 
     List<Integer> getRoleIdListByAclId(@Param("aclId") int aclId);
     int countByRoleId(@Param("roleId") int roleId);
-
+    int countByAclId(@Param("aclId") int aclId);
 }
