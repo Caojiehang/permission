@@ -233,7 +233,7 @@
                 <i class="ace-icon fa fa-flag bigger-100"></i>
             </a>
             <acl:checkPermission code="20190802194433_50">
-            <a class="red user-delete" href="#" data-id="{{id}}" data-name="{{name}}">
+            <a class="red user-delete" href="#" data-id="{{id}}" data-name="{{username}}">
                     <i class="ace-icon fa fa-trash-o bigger-100"></i>
                 </a>
 </acl:checkPermission>
@@ -488,7 +488,7 @@
                                 showMessage("Delete [" + userName + "]", "Successfully", true);
                                 loadUserList(lastClickDeptId);
                             } else {
-                                showMessage("Delete[" + userName + "]", result.msg, false);
+                                showMessage("Delete [" + userName + "]", result.msg, false);
                             }
                         }
                     });
